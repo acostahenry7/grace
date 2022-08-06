@@ -1,0 +1,76 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="chatModalForm"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Accede a nuestro Chat</h5>
+        <button
+          type="button"
+          class="close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Para acceder a nuestro Chat necisitamos que nos brindes algunos datos
+          :)
+        </p>
+        <form class="" action="index.html" method="post">
+          <div class="form-group">
+            <label for=""><b>Nombre</b></label>
+            <input
+              id="username"
+              type="text"
+              class="form-control"
+              name=""
+              value=""
+              placeholder="ej. Juan Perez"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Correo</label>
+            <input
+              id="email"
+              type="text"
+              class="form-control"
+              name=""
+              value=""
+              placeholder="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Sobre qué es tu consulta?</label>
+            <select id="room" class="form-control" name="">
+              <option value="" disabled selected>Selecciona tu tema de consulta</option>
+              <option value="networing">Summer Camp</option>
+              <option value="servers">Summer Work & Travel</option>
+              <option value="development">Internship / Trainee</option>
+              <option value="multimedia">Teacher Program</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Cancelar</button>
+        <button id="chat_btn" type="button" class="btn btn-primary">Continuar al
+          Chat
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

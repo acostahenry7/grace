@@ -1,0 +1,107 @@
+<div id="navigation_bar" class="navigation_bar shadow-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 first-nav-item">
+        <a href="/" id="home_link"><i class="fas fa-home"></i> Inicio</a>
+      </div>
+      <div class="col-md-3">
+        <div class="service_dropdown">
+          <a class="service_dd_btn" id="services_link"><i
+              class="fas fa-toolbox"
+            ></i>
+            Programas
+          </a>
+          <div class="service_dropdown_content card-body shadow-sm">
+            <ul class="list-unstyled">
+              <li><i class=""></i>
+                <a href="/services/summercamp">Summer Camp</a></li>
+              <li><i class=""></i><a href="/services/summerwork">Summer Work &
+                  Travel</a>
+              </li>
+              <li><i class=""></i><a
+                  href="/services/networking"
+                >Internship/Trainee</a></li>
+              <li><i class=""></i><a href="/services/development">Teacher
+                  Program</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <a href="/aboutus"><i class="fas fa-user-alt"></i> Quiénes Somos?</a>
+      </div>
+      <div class="col-md-3">
+        <a href="/contactus"><i class="fas fa-headset"></i> Contacto</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="mobile_nav navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img
+        src="/public/media/images/grace.png"
+        width="50px"
+      /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"><i
+              class="fas fa-home mr-2"
+            ></i>Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-toolbox mr-2"></i>
+            Programas
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/services/summercamp">Summer Camp</a></li>
+            <li><a class="dropdown-item" href="/services/summerwork">Summer Work
+                & Travel action</a></li>
+            <li><a class="dropdown-item" href="/">Internship / Trainee</a></li>
+            <li><a class="dropdown-item" href="/">Teacher Program</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutus"><i
+              class="fas fa-user-alt mr-2"
+            ></i>¿Quiénes Somos?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contactus"><i
+              class="fas fa-headset mr-2"
+            ></i>Contacto</a>
+        </li>
+      </ul>
+      {{! <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> }}
+    </div>
+  </div>
+</nav>

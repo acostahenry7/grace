@@ -1,0 +1,32 @@
+<div class="bg-primary" style="height: 30vh">
+   <div class="container">
+
+   </div>
+</div>
+<div class="container">
+  <a href="#resources_d1" class="collpase_resources_d1" data-toggle="collapse">IMAGENES <i class="fas fa-chevron-circle-right"></i> </a>
+  <div id="resources_d1" class="resources_d1 ">
+    <div class="row">
+       {{#each images}}
+           <div class="col-md-4">
+               <img src="{{src}}" alt="">
+               <p class="resources_img_title">{{title}}<span style="float: right"> {{date}}</span> </p>
+               <p class="resources_img_subtitle">{{subtitle}}</p>
+           </div>
+       {{/each}}
+    </div>
+  </div>
+  <a href="#resources_d1" class="collpase_resources_d1" data-toggle="collapse">IMAGENES <i class="fas fa-chevron-circle-right"></i> </a>
+  <div id="resources_d" class="resources_d1 collapse">
+    <div class="row">
+       {{#each images}}
+           <div class="col-md-4">
+               <img src="{{src}}" alt="">
+               <p class="resources_img_title">{{title}}</p>
+               <p class="resources_img_subtitle">{{subtitle}}</p>
+           </div>
+       {{/each}}
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,52 @@
+#home-carousel-1 {
+  background-size: cover;
+  padding: 100px 0;
+  vertical-align: middle;
+  /*background: linear-gradient(to right, transparent 60%, rgba(255,255,255,0) 100%), url('/public/media/images/internship.png');*/
+  background-image: url("/public/media/images/internship.png");
+  background-size: cover;
+  height: 100%;
+  max-width: 100%;
+  background-position: 0 40%;
+}
+
+#home-carousel-1 h2 {
+  font-weight: bold;
+  background-color: white;
+  width: 153px;
+  color: #0992ed;
+  font-size: 45px;
+}
+
+#home-carousel-1 h2 span {
+  color: black;
+  font-weight: normal;
+  font-size: 36px;
+}
+
+#home-carousel-1 .item_2 {
+  margin-left: 120px;
+  width: 175px;
+}
+#home-carousel-1 .item_3 {
+  margin-left: 270px;
+  width: 160px;
+}
+
+#home-carousel-1 .item_1 {
+  width: 149px;
+}
+
+#carousel_item {
+  height: 60vh;
+}
+
+@media screen and (max-width: 450px) {
+  #carousel_item {
+    height: 40vh;
+  }
+
+  #home-carousel-1 {
+    background-position: -152px 40%;
+  }
+}

@@ -1,0 +1,19 @@
+#aboutus .text_col{
+  padding-top: 50px
+}
+
+.aboutus .row:not(.first-row){
+  margin-top: 80px !important
+}
+
+.aboutus h4 {
+  color: #4cb2f1;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.aboutus p {
+  text-align: justify;
+  color: #8F8F8F;
+}
