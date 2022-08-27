@@ -1,37 +1,40 @@
 #topnav {
-    background-color: #fcfcfc;
+  background-color: #fcfcfc;
 }
 
 #topnav .container {
   display: flex !important;
-  justify-content:  space-between;
+  justify-content: space-between;
 }
 
-#topnav i , a{
+#topnav i,
+a {
   margin: 0 2px;
   margin-top: 6px;
-
 }
 
 .top_nav_icons a {
-   text-decoration: none;
+  text-decoration: none;
 }
 
 #topnav span {
-  font-size: 12px
+  font-size: 12px;
 }
 
 #sencondnav {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
-.secondnav  h4 {
-
+.secondnav h4 {
 }
 .secondnav h2 {
-   color: #2e9cec;
-   font-family: sans-serif;
-   font-weight: bold;
+  color: #2e9cec;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#navigation_bar i {
+  color: cornflowerblue;
 }
