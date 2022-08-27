@@ -48,16 +48,16 @@ body {
 }
 
 .bill_form {
-  background-image: linear-gradient(to right, black, transparent),
+  /* background-image: linear-gradient(to right, black, transparent),
     url("/public/media/images/techsupport.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .bill_form input,
 .bill_form textarea {
   background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: black;
 }
 
 .bill_form input:focus {
