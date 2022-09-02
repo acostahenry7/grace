@@ -48,8 +48,8 @@ body {
 }
 
 .bill_form {
-  background-image: linear-gradient(to right, black, transparent),
-    url("/public/media/images/techsupport.jpg");
+  /* background-image: linear-gradient(to right, black, transparent),
+    url("/public/media/images/techsupport.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -75,7 +75,7 @@ body {
 #footer {
   height: 70px;
   background-color: #eeeeee;
-  background-image: linear-gradient(to right, #eeeeee, white);
+  /* background-image: linear-gradient(to right, #eeeeee, white); */
   z-index: 9;
 }
 
