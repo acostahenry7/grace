@@ -38,12 +38,12 @@
 }
 
 #carousel_item {
-  height: 60vh;
+  height: 60vh !important;
 }
 
 @media screen and (max-width: 450px) {
   #carousel_item {
-    height: 40vh;
+    height: 40vh !important;
   }
 
   #home-carousel-1 {

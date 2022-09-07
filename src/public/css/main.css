@@ -49,13 +49,11 @@ body {
 
 .bill_form {
   /* background-image: linear-gradient(to right, black, transparent),
-<<<<<<< HEAD
+
     url("/public/media/images/techsupport.jpg"); */
-=======
-    url("/public/media/images/techsupport.jpg");
->>>>>>> 0394d62e6dd52b24b8a1c29459ba9f04e5b1d597
+
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
 }
 
 .bill_form input,
@@ -67,7 +65,7 @@ body {
 .bill_form input:focus {
   outline: none !important;
   background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: black;
 }
 
 .bill_form textarea:focus {

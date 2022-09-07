@@ -155,7 +155,20 @@ module.exports = (app) => {
   router.post("/request/mail", (req, res) => {
     console.log(req.body);
 
-    res.send("Done");
+    var transport = nodemailer.createTransport({
+      host: "graceinternational.com.do",
+      port: 465,
+      auth: {
+        user: "app@graceinternational.com.do",
+        pass: "@4Bb?C#(iU@$",
+      },
+    });
+    var mailOptions = {
+      from: "app@graceinternational.com.do",
+      to: "info@graceinternational.com.do",
+      subject: "Formulario de Aplicacion-GRACE",
+      text: "That was easy!",
+    };
   });
 
   router.get("/resources", (req, res) => {

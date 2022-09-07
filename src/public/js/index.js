@@ -74,3 +74,15 @@ function underLine(element) {
   $(element).css("border-bottom", "2px solid #0088cc");
   $(element).css("padding-bottom", "2px");
 }
+
+$("#applicationForm").submit((e) => {
+  e.preventDefault();
+  $.ajax({
+    url: $("#applicationForm").attr("action"),
+    type: "POST",
+    data: $("#applicationForm").serialize(),
+    success: (res) => {
+      console.log(res);
+    },
+  });
+});
