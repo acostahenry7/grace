@@ -1,5 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const nodemailer = require("nodemailer");
+const path = require("path");
+var pdf = require("pdf-creator-node");
+var fs = require("fs");
 
 module.exports = (app) => {
   router.get("/", (req, res) => {
@@ -155,7 +159,7 @@ module.exports = (app) => {
   router.post("/request/mail", (req, res) => {
     console.log(req.body);
 
-    var transport = nodemailer.createTransport({
+    var transporter = nodemailer.createTransport({
       host: "graceinternational.com.do",
       port: 465,
       auth: {
@@ -165,10 +169,69 @@ module.exports = (app) => {
     });
     var mailOptions = {
       from: "app@graceinternational.com.do",
+      //to: "acostahenry7@gmail.com",
       to: "info@graceinternational.com.do",
-      subject: "Formulario de Aplicacion-GRACE",
-      text: "That was easy!",
+      attachments: [
+        {
+          filename: `Formulario-aplicación${req.body.name}`,
+          path: path.join(__dirname, "./output.pdf"),
+        },
+      ],
+      subject: "Formulario de Aplicacion GRACE",
+      text: `Adjunto formulario de aplicación ${req.body.name} ${req.body.lastname} `,
     };
+
+    var options = {
+      format: "letter",
+      orientation: "portrait",
+      border: "10mm",
+      header: {
+        height: "0",
+        contents: "",
+      },
+      footer: {
+        height: "0",
+        contents: {
+          first: "Cover page",
+          2: "Second page", // Any page number is working. 1-based index
+          default:
+            '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
+          last: "Last Page",
+        },
+      },
+    };
+    var ejObj = {
+      name: "Ramon",
+    };
+    var html = fs.readFileSync(path.join(__dirname, "./template.html"), "utf8");
+
+    var document = {
+      html: html,
+      data: req.body,
+      path: path.join(__dirname, "./output.pdf"),
+      type: "",
+    };
+
+    pdf
+      .create(document, options)
+      .then((res) => {
+        console.log(res);
+        transporter.sendMail(mailOptions, (err, info) => {
+          if (err) {
+            console.log(err);
+            //res.send({ sent: false });
+          } else {
+            console.log("Emal sent: ", info);
+            //res.send({ sent: true });
+          }
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    console.log(req.body);
+    res.send("hi");
   });
 
   router.get("/resources", (req, res) => {

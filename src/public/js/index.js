@@ -83,6 +83,7 @@ $("#applicationForm").submit((e) => {
     data: $("#applicationForm").serialize(),
     success: (res) => {
       console.log(res);
+      $("#applicationForm")[0].reset();
     },
   });
 });
