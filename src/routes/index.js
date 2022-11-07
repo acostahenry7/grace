@@ -7,7 +7,56 @@ var fs = require("fs");
 
 module.exports = (app) => {
   router.get("/", (req, res) => {
-    res.render("home");
+    let view = {
+      pictures: [
+        {
+          src: "/public/media/images/explore_1.jpg",
+          alt: "explore",
+          class: "active",
+        },
+        {
+          src: "/public/media/images/explore_2.jpeg",
+          alt: "explore",
+          class: "",
+        },
+        {
+          src: "/public/media/images/explore_3.jpeg",
+          alt: "explore",
+          class: "",
+        },
+        {
+          src: "/public/media/images/fireworks.jpg",
+          alt: "explore",
+          class: "",
+        },
+        {
+          src: "/public/media/images/MALL.jpg",
+          alt: "explore",
+          class: "",
+        },
+        {
+          src: "/public/media/images/PLANE.jpg",
+          alt: "explore",
+          class: "",
+        },
+        {
+          src: "/public/media/images/WP1.jpg",
+          alt: "explore",
+          class: "",
+        },
+        {
+          src: "/public/media/images/WP2.jpg",
+          alt: "explore",
+          class: "",
+        },
+        {
+          src: "/public/media/images/WP4.jpEg",
+          alt: "explore",
+          class: "",
+        },
+      ],
+    };
+    res.render("home", view);
   });
 
   router.get("/multimedia", (req, res) => {
@@ -170,7 +219,7 @@ module.exports = (app) => {
     var mailOptions = {
       from: "app@graceinternational.com.do",
       //to: "acostahenry7@gmail.com",
-      to: "info@graceinternational.com.do",
+      to: req.body.email,
       attachments: [
         {
           filename: `Formulario-aplicación${req.body.name}`,

@@ -87,3 +87,8 @@ $("#applicationForm").submit((e) => {
     },
   });
 });
+
+function hello(src) {
+  $("#showImageModal_img").attr("src", src);
+  $("#showImageModal").modal("show");
+}

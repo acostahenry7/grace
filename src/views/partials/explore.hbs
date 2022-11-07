@@ -1,4 +1,4 @@
-<div style="font-family: 'Cedarville Cursive', cursive; padding-top: 100px">
+{{! <div style="font-family: 'Cedarville Cursive', cursive; padding-top: 100px">
   <h1 class="text-center text-white">
     Explora y conócenos
   </h1>
@@ -19,10 +19,84 @@
         <img src="/public/media/images/explore_3.jpeg" alt="song" />
       </label>
     </div>
+    
+  </div>
+</div> }}
+
+<div
+  style="font-family: 'Cedarville Cursive', cursive; padding-top: 100px; padding-bottom: 100px"
+>
+  <h1 class="text-center text-white">
+    Explora y conócenos
+  </h1>
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    style="margin-top: 60px"
+  >
+    <ol class="carousel-indicators">
+      <li
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="0"
+        class="active"
+      ></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8"></li>
+    </ol>
+    <div class="carousel-inner">
+      {{#each pictures}}
+        <div class="carousel-item {{class}}" style="">
+          <a style="text-decoration: none" onclick="hello('{{src}}')">
+            <img
+              style=""
+              class="d-block explore_img"
+              src="{{src}}"
+              alt="First slide"
+            />
+          </a>
+
+        </div>
+      {{/each}}
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="text-center mt-5">
     <a href="https://www.instagram.com/graceinternationalexchange/">
       <span class="btn border know_us_card_btn text-white">Quiero ver más
         <i class="fa fa-plus"></i>
       </span>
     </a>
   </div>
+
+  {{!-- <div class="pictures" style="display: flex">
+    {{#each pictures}}
+      <div>
+        <img src="{{src}}" alt="{{alt}}" width="500px" />
+      </div>
+    {{/each}}
+  </div> --}}
 </div>
