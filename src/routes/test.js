@@ -22,21 +22,37 @@ async function modifyPdf(input, output) {
     const form = await pdfDoc.getForm();
 
     let entries = Object.entries(data);
-    // entries.forEach((entry, index) => {
-    //   console.log(entry[1]);
-    //   form.getTextField(`untitled${index + 1}`).setText(`${entry[1]}`);
-    // });
+    entries.forEach((entry, index) => {
+      console.log(entry[1]);
+      form.getTextField(`untitled${index + 1}`).setText(`${entry[1]}`);
+    });
 
     for (let i = 0; i < 107; i++) {
       try {
         form.getTextField(`untitled${i + 1}`).setText(`${i + 1}`);
       } catch (error) {
-        console.log(entries[i][i + 1]);
-        form.getCheckBox(`untitled${i + 1}`).check();
+        //console.log(entries[i][i + 1]);
+        //form.getCheckBox(`untitled${i + 1}`).check();
       }
+
+      // form.getTextField(`untitled${i + 1}`).setText(`${i + 1}`);
     }
 
     form.getTextField("untitled86").setText("no se");
+    form.getTextField("untitled1").setText(data.firstName);
+    form.getTextField("untitled2").setText(data.lastName);
+    form.getTextField("untitled2").setText(data.birthDate);
+    form.getTextField("untitled4").setText(data.age);
+    form.getTextField("untitled5").setText(data.id);
+    form.getTextField("untitled6").setText(data.passport);
+    form.getTextField("untitled7").setText(data.email);
+    form.getTextField("untitled8").setText(data.phoneNumber);
+    form.getTextField("untitled106").setText(data.altPhoneNumber);
+    form.getTextField("untitled105").setText(data.nac);
+    form.getTextField("untitled1").setText(data.firstName);
+    form.getTextField("untitled1").setText(data.firstName);
+    form.getTextField("untitled1").setText(data.firstName);
+    form.getTextField("untitled1").setText(data.firstName);
 
     const pdfBytes = await pdfDoc.save();
     await writeFile(output, pdfBytes);
