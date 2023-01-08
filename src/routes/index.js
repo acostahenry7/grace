@@ -342,5 +342,9 @@ module.exports = (app) => {
     }
   });
 
+  router.get("/test", (req, res) => {
+    console.log("hola");
+  });
+
   app.use(router);
 };
