@@ -5,16 +5,15 @@
   <div class="container" style="">
     <div class="row">
       <div 
-      class="col-md-8 px-5 py-5 shadow-sm" 
+      class="col-md-8 px-5 py-5 " 
       style="margin-left: auto; margin-right: auto; 
-      border: 0.5px solid rgba(0,0,0,0.1);
-      border-left: solid 5px #4cb2f1; border-bottom-left-radius: 10px;
+      
       ">
 
           <h4 class="text-center"><i class="fa fa-exclamation-circle mr-2" aria-hidden="true" style="color: #4cb2f1"></i>Aplica a uno de nuestros Programas</h4>
 
           <form  id="applicationForm" class="" action="/request/mail" method="post">
-            <div class="row mt-5">
+            <div class="row" style="margin-top: 70px;" >
               {{!-- <div class="col-md-6">
                 <div class="form-group">
                   <input
@@ -58,9 +57,9 @@
               data-bs-toggle="collapse" 
               data-bs-target="#cat_personalInformation"
               aria-expanded="false" 
-              class="py-3 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc"
+              class="py-3 mt-4 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc"
               >
-                <h5 class="m-0">Información Personal</h5><i id="cat1_icon" class="fas fa-chevron-down"></i>
+                <h5 class="m-0 cat_title">Información Personal</h5><i id="cat1_icon" class="fas fa-chevron-down"></i>
               </div>
               <div  id="cat_personalInformation" class="collapse pt-4">
                                 <div class="form-group">
@@ -178,30 +177,80 @@
               data-bs-toggle="collapse" 
               data-bs-target="#cat_academicInformation" 
               aria-expanded="false" 
-              class="py-3 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc">
-                <h5 class="m-0">Información Académica</h5><i class="fas fa-chevron-down" id="cat2_icon" style=""></i>
+              class="py-3 mt-4 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc">
+                <h5 class="m-0 cat_title">Información Académica</h5><i class="fas fa-chevron-down" id="cat2_icon" style=""></i>
               </div>
               <div id="cat_academicInformation" class="collapse pt-4">
-                 <div class="form-group">
-                  <label>¿Qué Carrera y Universidad cursas?</label>
-                  <input type="text" name="subjectSchool" class="form-control" placeholder="Carrera/Universidad">
+                <div class="form-group">
+                  <label>¿Donde estudias?</label>
+                  <input type="text" name="college" class="form-control" placeholder="Universidad">
+                </div>
+                <div class="form-group">
+                  <label>¿Cuándo comenzaste la Universidad?</label>
+                  <input type="date" name="collegeStartingDate" class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>¿Qué estudias?</label>
+                  <input type="text" name="career" class="form-control" placeholder="Ej. Lic. Contabilidad">
+                </div>
+                <div class="form-group">
+                  <label>¿Cuántos períodos has completado?</label>
+                  <input type="number" name="collegeLevel" class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>¿Cuántas asignaturas estás cursando en este período?</label>
+                  <input type="number" name="currentSubjects" class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>¿Cuántas asignaturas tomaste en el período pasado?</label>
+                  <input type="number" name="lastSubjects" class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>¿Alguna vez has interrumpido tus estudios?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="interrupted" name="whereCollegeStoped" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="uninterrupted" name="whereCollegeStoped" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                  </div>
+                  </div>
               </div>
               <div class="form-group">
-                  <label>¿Cuántos períodos cursados tienes?</label>
-                  <select class="form-control" name="periods">
-                    <option value="0">Este es mi primero</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="+4">+4</option>
-                  </select>
+                  <label>¿Cuándo piensas graduarte?</label>
+                  <input type="date" name="aproxEndingDate" class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>¿Has estudiado en otra universidad?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="otherCollegeY" name="wentOtherCollege" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="otherCollegeN" name="wentOtherCollege" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                  </div>
+                  </div>
               </div>
               <div class="form-group">
-                  <label>¿Cuantas asignaturas y créditos estás cursando en este periodo?</label>
-                  <div style="display: flex">
-                    <input type="number" name="csubject" class="form-control w-50 mr-1" placeholder="Cant. Asignaturas">
-                  <input type="number" name="ccredits" class="form-control w-50" placeholder="Créditos">
+                  <label>¿Alguna vez te has cambiado de carrera?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="changedCareerY" name="changedCareer" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="changedCareerN" name="changedCareer" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                  </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label>¿Alguna vez te has cambiado de Universidad?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="changedCollegeY" name="changedCollege" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="changedCollegN" name="changedCollege" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                  </div>
                   </div>
               </div>
               </div>
@@ -211,37 +260,355 @@
               data-bs-toggle="collapse" 
               data-bs-target="#cat_workExperience" 
               aria-expanded="false" 
-              class="py-3 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc">
-                <h5 class="m-0">Experiencia Laboral</h5><i class="fas fa-chevron-down" id="cat3_icon" style=""></i>
+              class="py-3 mt-4 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc">
+                <h5 class="m-0 cat_title">Experiencia Laboral</h5><i class="fas fa-chevron-down" id="cat3_icon" style=""></i>
               </div>
               <div id="cat_workExperience" class="collapse pt-4">
                  <div class="form-group">
-                  <label>¿Qué Carrera y Universidad cursas?</label>
-                  <input type="text" name="subjectSchool" class="form-control" placeholder="Carrera/Universidad">
-              </div>
-              <div class="form-group">
-                  <label>¿Cuántos períodos cursados tienes?</label>
-                  <select class="form-control" name="periods">
-                    <option value="0">Este es mi primero</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="+4">+4</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                  <label>¿Cuantas asignaturas y créditos estás cursando en este periodo?</label>
-                  <div style="display: flex">
-                    <input type="number" name="csubject" class="form-control w-50 mr-1" placeholder="Cant. Asignaturas">
-                  <input type="number" name="ccredits" class="form-control w-50" placeholder="Créditos">
+                  <label>¿Actualmente trabajas?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="currentLyWorkingY" name="currentLyWorking" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
-              </div>
-              </div>
+                  <div>
+                      <input id="currentLyWorkingN" name="currentLyWorking" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                  </div>
+                  </div>
+                </div>
               
+              <div class="form-group">
+                  <label>Si es así ¿Donde?</label>
+                  <input type="text" name="companyName" style="" class="form-control" placeholder="Empresa"/>
+              </div>
+              <div class="form-group">
+                  <label>¿Cuál es tu posición allí?</label>
+                  <input type="text" name="workPosition" style="" class="form-control" placeholder=""/>
+              </div>
+              <div class="form-group">
+                  <label>¿Es un trabajo a tiempo completo o a medio tiempo?</label>
+                  <input type="text" name="workTiming" style="" class="form-control"/>
+              </div>
+              <div class="form-group">
+                  <label>¿Por cuánto tiempo has trabajado allí?</label>
+                  <input type="text" name="hiredTime" style="" class="form-control"/>
+              </div>
+              <div class="form-group">
+                  <label>¿En cuales otros lugares has trabajado y cuales han sido tus posiciones?</label>
+                  <input type="text" name="otherCompanyAndPos" style="" class="form-control"/>
+              </div>
+              </div>
+                <div 
+                id="cat4" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#cat_familyInformation" 
+              aria-expanded="false" 
+              class="py-3 mt-4 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc">
+                <h5 class="m-0 cat_title">Información parental</h5><i class="fas fa-chevron-down" id="cat4_icon" style=""></i>
+              </div>
+              <div id="cat_familyInformation" class="collapse pt-4">
+                 <div class="form-group">
+                  <label>Estado Civil</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="single" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Soltero</span>
+                  </div>
+                  <div>
+                      <input id="married" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Casado</span>
+                  </div>
+                  <div>
+                      <input id="divorced" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Divorciado</span>
+                  </div>
+                  <div>
+                      <input id="maritalStatusOther" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Otro</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Tienes hijos?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="childrenY" name="children" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="childrenN" name="children" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+              <div class="form-group">
+                  <label>¿Actualmente, con quién vives?</label>
+                  <input type="text" name="liveWidth" style="" class="form-control" placeholder="Empresa"/>
+              </div>
+              <div class="form-group">
+                  <label>¿Tus padres trabajan?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="workingParentsY" name="workingParents" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="workingParentsN" name="workingParents" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+              <div class="form-group">
+                  <label>¿Cuáles son sus ocupaciones?</label>
+                  <input type="text" name="ocupations" style="" class="form-control" placeholder=""/>
+              </div>
+              <div class="form-group">
+                  <label>¿Viven en casa propia?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="ownedHouseY" name="ownedHouse" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="ownedHouseN" name="ownedHouse" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Tienes hermanos/as?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="siblingsY" name="siblings" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="siblingsN" name="siblings" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+              <div class="form-group">
+                  <label>¿Cuántos/as?</label>
+                  <input type="number" name="sibligsAmount" style="" class="form-control"/>
+              </div>
+               <div class="form-group">
+                  <label>¿Tienes familiares directos en USA? (padres, hermanos, esposo/a)</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="closeFamilyAtUSY" name="closeFamilyAtUS" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="closeFamilyAtUSN" name="closeFamilyAtUS" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div 
+                id="cat5" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#cat_exchangeProgram" 
+              aria-expanded="false" 
+              class="py-3 mt-4 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc">
+                <h5 class="m-0 cat_title">Programa</h5><i class="fas fa-chevron-down" id="cat5_icon" style=""></i>
+              </div>
+              <div id="cat_exchangeProgram" class="collapse pt-4">
+                <div class="form-group">
+                  <label>¿Cuál crees es la principal meta de este programa?</label>
+                  <input type="text" name="goal" style="" class="form-control" placeholder=""/>
+              </div>
+              <div class="form-group">
+                  <label>¿Por qué deseas realizar este programa?</label>
+                  <input type="text" name="whyDoingProgram" style="" class="form-control" placeholder=""/>
+              </div>
+                <div class="form-group">
+                  <label>¿Quién lo costeará/pagará?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="whoIsPayingMe" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Yo</span>
+                  </div>
+                  <div>
+                      <input id="whoIsPayingParents" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Padres</span>
+                  </div>
+                  <div>
+                      <input id="whoIsPayingFriend" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Amigo</span>
+                  </div>
+                  <div>
+                      <input id="whoIsPayingOther" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Otro</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Tienes alguna idea de quienes serán tus garantes?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="wanrrantiersY" name="wanrrantiers" style="display: inline-block" type="radio" /> <span>Yo</span>
+                  </div>
+                  <div>
+                      <input id="wanrrantiersN" name="wanrrantiers" style="display: inline-block" type="radio" /> <span>Padres</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Has realizado este programa anteriormente u otro de intercambio cultural?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="exchangeBeforeY" name="exchangeBefore" style="display: inline-block" type="radio" /> <span>Yo</span>
+                  </div>
+                  <div>
+                      <input id="exchangeBeforeN" name="exchangeBefore" style="display: inline-block" type="radio" /> <span>Padres</span>
+                  </div>
+                  </div>
+                </div>
+              <div class="form-group">
+                  <label>¿Cuantas veces lo has hecho?</label>
+                  <input type="number" name="howManyExchanges" style="" class="form-control"/>
+              </div>
+              <div class="form-group">
+                  <label>¿En qué año(s)?</label>
+                  <input type="text" name="atWhichYear" style="" class="form-control"/>
+              </div>
+              <div class="form-group">
+                  <label>¿A través de cuál agencia?</label>
+                  <input type="text" name="agency" style="" class="form-control" placeholder=""/>
+              </div>
+              <div class="form-group">
+                  <label>¿Qué sponsor(s)?</label>
+                  <input type="text" name="sponsor" style="" class="form-control" placeholder=""/>
+              </div>
+               <div class="form-group">
+                  <label>¿Por qué cambiaste de agencia(s)?</label>
+                  <input type="text" name="whyChangedAgency" style="" class="form-control" placeholder=""/>
+              </div>
+              <div class="form-group">
+                  <label>¿Tuviste algún problema en tu pasado programa?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="troublesLastProgramY" name="troublesLastProgram" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="troublesLastProgramN" name="troublesLastProgram" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Alguna vez has visitado USA?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="hasVisitedUSY" name="hasVisitedUS" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="hasVisitedUSN" name="hasVisitedUS" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Tiene alguna visa de USA?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="usVisaY" name="usVisa" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="usVisaN" name="usVisa" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+              <div class="form-group">
+                  <label>¿Cuál visa tienes?</label>
+                  <input type="text" name="whichVisa" style="" class="form-control" placeholder=""/>
+              </div>
+              <div class="form-group">
+                  <label>¿Está actualmente en algún proceso de residencia hacia USA?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="usResidenceProcessY" name="usResidenceProcess" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="usResidenceProcessN" name="usResidenceProcess" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Se te ha negado alguna visa hacia USA?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="usVisaDeniedY" name="usVisaDenied" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="usVisaDeniedN" name="usVisaDenied" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Tiene alguna condición de salud?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="medConditionY" name="medCondition" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="medConditionN" name="medCondition" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <label>¿Cuál es tu condición?</label>
+                  <input type="text" name="whichMedCondition" style="" class="form-control"/>
+              </div>
+              <div class="form-group">
+                  <label>¿Tiene alguna prescripción médica?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="medicalPrescriptionY" name="medicalPrescription" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="medicalPrescriptionN" name="medicalPrescription" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>¿Tiene algún impedimento de trabajar un día particular?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="noWorkingDayY" name="noWorkingDay" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="noWorkingDayN" name="noWorkingDay" style="display: inline-block" type="radio" /> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div 
+                id="cat6" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#cat_grace" 
+              aria-expanded="false" 
+              class="py-3 mt-4 cat" style="display:flex; align-items: center; justify-content:space-between; cursor: pointer; background-color: #fcfcfc">
+                <h5 class="m-0 cat_title">Preguntas de Cierre</h5><i class="fas fa-chevron-down" id="cat6_icon" style=""></i>
+              </div>
+              <div id="cat_grace" class="collapse pt-4">
+                 <div class="form-group">
+                  <label>¿Actualmente trabajas?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input id="currentLyWorkingY" name="currentLyWorking" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input id="currentLyWorkingN" name="currentLyWorking" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                  </div>
+                  </div>
+                </div>
+              
+              <div class="form-group">
+                  <label>Si es así ¿Donde?</label>
+                  <input type="text" name="companyName" style="" class="form-control" placeholder="Empresa"/>
+              </div>
+              <div class="form-group">
+                  <label>¿Cuál es tu posición allí?</label>
+                  <input type="text" name="workPosition" style="" class="form-control" placeholder=""/>
+              </div>
+              <div class="form-group">
+                  <label>¿Es un trabajo a tiempo completo o a medio tiempo?</label>
+                  <input type="text" name="workTiming" style="" class="form-control"/>
+              </div>
+              <div class="form-group">
+                  <label>¿Por cuánto tiempo has trabajado allí?</label>
+                  <input type="text" name="hiredTime" style="" class="form-control"/>
+              </div>
+              <div class="form-group">
+                  <label>¿En cuales otros lugares has trabajado y cuales han sido tus posiciones?</label>
+                  <input type="text" name="otherCompanyAndPos" style="" class="form-control"/>
+              </div>
+              </div>
               </div>
             </div>
-            <div class="row mt-4">
+            <div class="row mt-5">
               <button
                 type="submit"
                 class="btn text-white"
