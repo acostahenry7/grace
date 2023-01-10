@@ -54,6 +54,7 @@ body {
 
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 50px 0
 }
 
 .bill_form input,
@@ -81,6 +82,25 @@ body {
   z-index: 9;
 }
 
+.cat {
+   border-bottom: 3px solid rgb(0,176,240);
+   /*border-bottom-left-radius: 5px;*/
+   border-bottom-right-radius: 5px;
+   margin: 20px 0
+}
+
+#cat1_icon, #cat2_icon, #cat3_icon{
+  transition: transform .2s ease-in-out; 
+}
+
+#cat1[aria-expanded='false'] > #cat1_icon,
+#cat2[aria-expanded='false'] > #cat2_icon,
+#cat3[aria-expanded='false'] > #cat3_icon
+ {
+  transform: rotate(-90deg);
+}
+
+
 @media screen and (max-width: 767px) {
   .know_us_container {
     margin-top: 30px;
@@ -105,5 +125,9 @@ body {
 
   .know_us_card_btn {
     display: block;
+  }
+
+  .bill_form {
+    padding: 0
   }
 }
