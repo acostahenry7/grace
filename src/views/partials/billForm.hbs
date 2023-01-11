@@ -62,9 +62,9 @@
                 <h5 class="m-0 cat_title">Información Personal</h5><i id="cat1_icon" class="fas fa-chevron-down"></i>
               </div>
               <div  id="cat_personalInformation" class="collapse pt-4">
-                                <div class="form-group">
+                <div class="form-group">
                   <label>Nombre(s)</label>
-                  <input type="text" name="name" class="form-control" placeholder="Juan...">
+                  <input  type="text" name="firstname" class="form-control" placeholder="Juan...">
               </div>
               <div class="form-group">
                   <label>Apellidos(s)</label>
@@ -79,10 +79,10 @@
                   <label>Sexo</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="male" name="sex" style="display: inline-block" type="radio" /> <span>Hombre</span>
+                      <input value="male" name="sex" style="display: inline-block" type="radio" /> <span>Hombre</span>
                   </div>
                   <div>
-                      <input id="famale" name="sex" style="display: inline-block" type="radio" class=""/> <span>Mujer</span>
+                      <input value="famale" name="sex" style="display: inline-block" type="radio" class=""/> <span>Mujer</span>
                   </div>
                   </div>
               </div>
@@ -114,22 +114,22 @@
                   <label>Nivel de Inglés</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="c2" name="englishLevel" style="display: inline-block" type="radio" /> <span>C2</span>
+                      <input value="c2" name="englishLevel" style="display: inline-block" type="radio" /> <span>C2</span>
                   </div>
                   <div>
-                      <input id="c1" name="englishLevel" style="display: inline-block" type="radio" /> <span>C1</span>
+                      <input value="c1" name="englishLevel" style="display: inline-block" type="radio" /> <span>C1</span>
                   </div>
                   <div>
-                      <input id="b2" name="englishLevel" style="display: inline-block" type="radio" /> <span>B2</span>
+                      <input value="b2" name="englishLevel" style="display: inline-block" type="radio" /> <span>B2</span>
                   </div>
                   <div>
-                      <input id="b1" name="englishLevel" style="display: inline-block" type="radio" /> <span>B1</span>
+                      <input value="b1" name="englishLevel" style="display: inline-block" type="radio" /> <span>B1</span>
                   </div>
                   <div>
-                      <input id="a2" name="englishLevel" style="display: inline-block" type="radio" /> <span>A2</span>
+                      <input value="a2" name="englishLevel" style="display: inline-block" type="radio" /> <span>A2</span>
                   </div>
                   <div>
-                      <input id="a1" name="englishLevel" style="display: inline-block" type="radio" /> <span>A1</span>
+                      <input value="a1" name="englishLevel" style="display: inline-block" type="radio" /> <span>A1</span>
                   </div>
                   </div>
               </div>
@@ -145,22 +145,22 @@
                   <label>T-shirt Size</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="xs" name="shirtSize" style="display: inline-block" type="radio" /> <span>XS</span>
+                      <input value="xs" name="shirtSize" style="display: inline-block" type="radio" /> <span>XS</span>
                   </div>
                   <div>
-                      <input id="s" name="shirtSize" style="display: inline-block" type="radio" /> <span>S</span>
+                      <input value="s" name="shirtSize" style="display: inline-block" type="radio" /> <span>S</span>
                   </div>
                   <div>
-                      <input id="m" name="shirtSize" style="display: inline-block" type="radio" /> <span>M</span>
+                      <input value="m" name="shirtSize" style="display: inline-block" type="radio" /> <span>M</span>
                   </div>
                   <div>
-                      <input id="L" name="shirtSize" style="display: inline-block" type="radio" /> <span>L</span>
+                      <input value="L" name="shirtSize" style="display: inline-block" type="radio" /> <span>L</span>
                   </div>
                   <div>
-                      <input id="xl" name="shirtSize" style="display: inline-block" type="radio" /> <span>XL</span>
+                      <input value="xl" name="shirtSize" style="display: inline-block" type="radio" /> <span>XL</span>
                   </div>
                   <div>
-                      <input id="2xl" name="shirtSize" style="display: inline-block" type="radio" /> <span>2XL</span>
+                      <input value="2xl" name="shirtSize" style="display: inline-block" type="radio" /> <span>2XL</span>
                   </div>
                   </div>
               </div>
@@ -209,10 +209,10 @@
                   <label>¿Alguna vez has interrumpido tus estudios?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="interrupted" name="whereCollegeStoped" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="whereCollegeStoped" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="uninterrupted" name="whereCollegeStoped" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                      <input value="n" name="whereCollegeStoped" style="display: inline-block" type="radio" class=""/> <span>No</span>
                   </div>
                   </div>
               </div>
@@ -221,13 +221,17 @@
                   <input type="date" name="aproxEndingDate" class="form-control" >
                 </div>
                 <div class="form-group">
+                  <label>¿Quién paga tus estudios?</label>
+                  <input type="text" name="payingResponsible" class="form-control" >
+                </div>
+                <div class="form-group">
                   <label>¿Has estudiado en otra universidad?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="otherCollegeY" name="wentOtherCollege" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="wentOtherCollege" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="otherCollegeN" name="wentOtherCollege" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                      <input value="n" name="wentOtherCollege" style="display: inline-block" type="radio" class=""/> <span>No</span>
                   </div>
                   </div>
               </div>
@@ -235,10 +239,10 @@
                   <label>¿Alguna vez te has cambiado de carrera?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="changedCareerY" name="changedCareer" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="changedCareer" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="changedCareerN" name="changedCareer" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                      <input value="n" name="changedCareer" style="display: inline-block" type="radio" class=""/> <span>No</span>
                   </div>
                   </div>
               </div>
@@ -246,10 +250,10 @@
                   <label>¿Alguna vez te has cambiado de Universidad?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="changedCollegeY" name="changedCollege" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="changedCollege" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="changedCollegN" name="changedCollege" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                      <input value="n" name="changedCollege" style="display: inline-block" type="radio" class=""/> <span>No</span>
                   </div>
                   </div>
               </div>
@@ -268,10 +272,10 @@
                   <label>¿Actualmente trabajas?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="currentLyWorkingY" name="currentLyWorking" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="currentlyWorking" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="currentLyWorkingN" name="currentLyWorking" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                      <input value="n" name="currentlyWorking" style="display: inline-block" type="radio" class=""/> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -310,16 +314,16 @@
                   <label>Estado Civil</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="single" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Soltero</span>
+                      <input value="single" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Soltero</span>
                   </div>
                   <div>
-                      <input id="married" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Casado</span>
+                      <input value="married" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Casado</span>
                   </div>
                   <div>
-                      <input id="divorced" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Divorciado</span>
+                      <input value="divorced" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Divorciado</span>
                   </div>
                   <div>
-                      <input id="maritalStatusOther" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Otro</span>
+                      <input value="maritalStatusOther" name="maritalStatus" style="display: inline-block" type="radio" /> <span>Otro</span>
                   </div>
                   </div>
                 </div>
@@ -327,25 +331,25 @@
                   <label>¿Tienes hijos?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="childrenY" name="children" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="children" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="childrenN" name="children" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="children" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
               <div class="form-group">
                   <label>¿Actualmente, con quién vives?</label>
-                  <input type="text" name="liveWidth" style="" class="form-control" placeholder="Empresa"/>
+                  <input type="text" name="liveWith" style="" class="form-control" placeholder="Empresa"/>
               </div>
               <div class="form-group">
                   <label>¿Tus padres trabajan?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="workingParentsY" name="workingParents" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="workingParents" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="workingParentsN" name="workingParents" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="workingParents" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -357,10 +361,10 @@
                   <label>¿Viven en casa propia?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="ownedHouseY" name="ownedHouse" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="ownedHouse" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="ownedHouseN" name="ownedHouse" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="ownedHouse" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -368,10 +372,10 @@
                   <label>¿Tienes hermanos/as?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="siblingsY" name="siblings" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="siblings" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="siblingsN" name="siblings" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="siblings" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -383,10 +387,10 @@
                   <label>¿Tienes familiares directos en USA? (padres, hermanos, esposo/a)</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="closeFamilyAtUSY" name="closeFamilyAtUS" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="closeFamilyAtUS" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="closeFamilyAtUSN" name="closeFamilyAtUS" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="closeFamilyAtUS" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -412,16 +416,16 @@
                   <label>¿Quién lo costeará/pagará?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="whoIsPayingMe" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Yo</span>
+                      <input value="me" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Yo</span>
                   </div>
                   <div>
-                      <input id="whoIsPayingParents" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Padres</span>
+                      <input value="parents" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Padres</span>
                   </div>
                   <div>
-                      <input id="whoIsPayingFriend" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Amigo</span>
+                      <input value="friend" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Amigo</span>
                   </div>
                   <div>
-                      <input id="whoIsPayingOther" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Otro</span>
+                      <input value="other" name="whoIsPaying" style="display: inline-block" type="radio" /> <span>Otro</span>
                   </div>
                   </div>
                 </div>
@@ -429,10 +433,10 @@
                   <label>¿Tienes alguna idea de quienes serán tus garantes?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="wanrrantiersY" name="wanrrantiers" style="display: inline-block" type="radio" /> <span>Yo</span>
+                      <input value="y" name="wanrrantiers" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="wanrrantiersN" name="wanrrantiers" style="display: inline-block" type="radio" /> <span>Padres</span>
+                      <input value="n" name="wanrrantiers" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -440,10 +444,10 @@
                   <label>¿Has realizado este programa anteriormente u otro de intercambio cultural?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="exchangeBeforeY" name="exchangeBefore" style="display: inline-block" type="radio" /> <span>Yo</span>
+                      <input value="y" name="exchangeBefore" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="exchangeBeforeN" name="exchangeBefore" style="display: inline-block" type="radio" /> <span>Padres</span>
+                      <input value="n" name="exchangeBefore" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -471,10 +475,10 @@
                   <label>¿Tuviste algún problema en tu pasado programa?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="troublesLastProgramY" name="troublesLastProgram" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="troublesLastProgram" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="troublesLastProgramN" name="troublesLastProgram" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="troublesLastProgram" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -482,10 +486,10 @@
                   <label>¿Alguna vez has visitado USA?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="hasVisitedUSY" name="hasVisitedUS" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="hasVisitedUS" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="hasVisitedUSN" name="hasVisitedUS" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="hasVisitedUS" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -493,10 +497,10 @@
                   <label>¿Tiene alguna visa de USA?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="usVisaY" name="usVisa" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="usVisa" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="usVisaN" name="usVisa" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="usVisa" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -508,10 +512,10 @@
                   <label>¿Está actualmente en algún proceso de residencia hacia USA?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="usResidenceProcessY" name="usResidenceProcess" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="usResidenceProcess" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="usResidenceProcessN" name="usResidenceProcess" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="usResidenceProcess" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -519,10 +523,10 @@
                   <label>¿Se te ha negado alguna visa hacia USA?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="usVisaDeniedY" name="usVisaDenied" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="usVisaDenied" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="usVisaDeniedN" name="usVisaDenied" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="usVisaDenied" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -530,10 +534,10 @@
                   <label>¿Tiene alguna condición de salud?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="medConditionY" name="medCondition" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="medCondition" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="medConditionN" name="medCondition" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="medCondition" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -545,10 +549,10 @@
                   <label>¿Tiene alguna prescripción médica?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="medicalPrescriptionY" name="medicalPrescription" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="medicalPrescription" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="medicalPrescriptionN" name="medicalPrescription" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="medicalPrescription" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -556,10 +560,10 @@
                   <label>¿Tiene algún impedimento de trabajar un día particular?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="noWorkingDayY" name="noWorkingDay" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="y" name="noWorkingDay" style="display: inline-block" type="radio" /> <span>Si</span>
                   </div>
                   <div>
-                      <input id="noWorkingDayN" name="noWorkingDay" style="display: inline-block" type="radio" /> <span>No</span>
+                      <input value="n" name="noWorkingDay" style="display: inline-block" type="radio" /> <span>No</span>
                   </div>
                   </div>
                 </div>
@@ -574,42 +578,57 @@
               </div>
               <div id="cat_grace" class="collapse pt-4">
                  <div class="form-group">
-                  <label>¿Actualmente trabajas?</label>
+                  <label>¿Cómo supiste de GRACE?</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input id="currentLyWorkingY" name="currentLyWorking" style="display: inline-block" type="radio" /> <span>Si</span>
+                      <input value="facebook" name="howDidYouKnow" style="display: inline-block" type="radio" /> <span>Facebook</span>
                   </div>
                   <div>
-                      <input id="currentLyWorkingN" name="currentLyWorking" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                      <input value="instagram" name="howDidYouKnow" style="display: inline-block" type="radio" class=""/> <span>Instagram</span>
+                  </div>
+                  <div>
+                      <input value="college" name="howDidYouKnow" style="display: inline-block" type="radio" class=""/> <span>Universidad</span>
+                  </div>
+                  <div>
+                      <input value="friend" name="howDidYouKnow" style="display: inline-block" type="radio" class=""/> <span>Amigo</span>
                   </div>
                   </div>
                 </div>
               
               <div class="form-group">
-                  <label>Si es así ¿Donde?</label>
-                  <input type="text" name="companyName" style="" class="form-control" placeholder="Empresa"/>
+                  <label>¿Por qué escogiste GRACE?</label>
+                  <input type="text" name="whyChoosedGrace" style="" class="form-control" placeholder=""/>
               </div>
               <div class="form-group">
-                  <label>¿Cuál es tu posición allí?</label>
-                  <input type="text" name="workPosition" style="" class="form-control" placeholder=""/>
+                  <label>¿Qué crees que debemos hacer para mejorar?</label>
+                  <input type="text" name="howToImprove" style="" class="form-control" placeholder=""/>
               </div>
               <div class="form-group">
-                  <label>¿Es un trabajo a tiempo completo o a medio tiempo?</label>
-                  <input type="text" name="workTiming" style="" class="form-control"/>
+                  <label>Algún amigo a quien te gustaría referir (Nombre y Telf.)</label>
+                  <input type="text" name="references" style="" class="form-control"/>
               </div>
               <div class="form-group">
-                  <label>¿Por cuánto tiempo has trabajado allí?</label>
-                  <input type="text" name="hiredTime" style="" class="form-control"/>
-              </div>
+                  <label>¿Alguna pregunta?</label>
+                  <div style="display: flex; flex-direction: column">
+                    <div>
+                      <input value="y" name="anyQuestions" style="display: inline-block" type="radio" /> <span>Si</span>
+                  </div>
+                  <div>
+                      <input value="n" name="anyQuestions" style="display: inline-block" type="radio" class=""/> <span>No</span>
+                  </div>
+                  </div>
+                </div>
               <div class="form-group">
-                  <label>¿En cuales otros lugares has trabajado y cuales han sido tus posiciones?</label>
-                  <input type="text" name="otherCompanyAndPos" style="" class="form-control"/>
+                  <label>¿Cúal sería?</label>
+                  <input type="text" name="questions" style="" class="form-control"/>
               </div>
+              
               </div>
               </div>
             </div>
             <div class="row mt-5">
               <button
+                id="appFormSubmit"
                 type="submit"
                 class="btn text-white"
                 style="margin: 0 auto; font-size: 18px; background-color: #4cb2f1; letter-spacing: 0.5px"

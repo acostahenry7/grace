@@ -5,6 +5,8 @@ const path = require("path");
 var pdf = require("pdf-creator-node");
 var fs = require("fs");
 
+var modifyPdf = require("./test");
+
 module.exports = (app) => {
   router.get("/", (req, res) => {
     let view = {
@@ -205,9 +207,7 @@ module.exports = (app) => {
     res.render("services", view);
   });
 
-  router.post("/request/mail", (req, res) => {
-    console.log(req.body);
-
+  router.post("/request/mail", async (req, res) => {
     var transporter = nodemailer.createTransport({
       host: "graceinternational.com.do",
       port: 465,
@@ -218,69 +218,38 @@ module.exports = (app) => {
     });
     var mailOptions = {
       from: "app@graceinternational.com.do",
-      //to: "acostahenry7@gmail.com",
-      to: req.body.email,
+      to: "acostahenry7@gmail.com",
+      //to: req.body.email,
       attachments: [
         {
-          filename: `Formulario-aplicación${req.body.name}`,
-          path: path.join(__dirname, "./output.pdf"),
+          filename: `Formulario-aplicación${req.body.firstname}-${req.body.lastname}.pdf`,
+          path: path.join(__dirname, "./modified_graceform.pdf"),
         },
       ],
       subject: "Formulario de Aplicacion GRACE",
-      text: `Adjunto formulario de aplicación ${req.body.name} ${req.body.lastname} `,
+      text: `Adjunto formulario de aplicación ${req.body.firstname} ${req.body.lastname} `,
     };
 
-    var options = {
-      format: "letter",
-      orientation: "portrait",
-      border: "10mm",
-      header: {
-        height: "0",
-        contents: "",
-      },
-      footer: {
-        height: "0",
-        contents: {
-          first: "Cover page",
-          2: "Second page", // Any page number is working. 1-based index
-          default:
-            '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
-          last: "Last Page",
-        },
-      },
-    };
-    var ejObj = {
-      name: "Ramon",
-    };
-    var html = fs.readFileSync(path.join(__dirname, "./template.html"), "utf8");
+    try {
+      await modifyPdf(
+        path.join(__dirname, "form_grace.pdf"),
+        path.join(__dirname, "modified_graceform.pdf"),
+        req.body
+      );
+    } catch (error) {
+      console.log(error);
+    }
 
-    var document = {
-      html: html,
-      data: req.body,
-      path: path.join(__dirname, "./output.pdf"),
-      type: "",
-    };
-
-    pdf
-      .create(document, options)
-      .then((res) => {
-        console.log(res);
-        transporter.sendMail(mailOptions, (err, info) => {
-          if (err) {
-            console.log(err);
-            //res.send({ sent: false });
-          } else {
-            console.log("Emal sent: ", info);
-            //res.send({ sent: true });
-          }
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-
-    console.log(req.body);
-    res.send("hi");
+    // transporter.sendMail(mailOptions, (err, info) => {
+    //   if (err) {
+    //     console.log(err);
+    //     res.send({ sent: false });
+    //   } else {
+    //     console.log("Emal sent: ", info);
+    //     res.send({ sent: true });
+    //   }
+    // });
+    res.send({ message: "done" });
   });
 
   router.get("/resources", (req, res) => {

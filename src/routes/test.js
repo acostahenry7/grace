@@ -2,96 +2,12 @@ const { PDFDocument } = require("pdf-lib");
 const { readFile, writeFile } = require("fs/promises");
 const path = require("path");
 
-let data = {
-  personalInfo: {
-    firstName: "Henry Junior",
-    lastName: "Acosta Vargas",
-    birthDate: "29/11/1999",
-    sex: "male",
-    age: "22",
-    id: "402-4060468-2",
-    passport: "",
-    email: "acostahenry7@gmail.com",
-    phoneNumber: "8299306702",
-    altPhoneNumber: "8496426702",
-    englishLevel: "b2",
-    nacionality: "Dominicano",
-    address: "Calle C, Apt A101 Res. Filadelfia IV, Santo Domingo Este",
-    shirtSize: "s",
-    emergencyContact: "Regina Vargas, Madre, 8094633774",
-  },
-  academicInformation: {
-    college: "Universidad Dominicana O&M",
-    collegeStartingDate: "01/08/2018",
-    career: "Ingeniería de Sistemas y Computación",
-    collegeLevel: "11",
-    currentSubjects: "5",
-    lastSubjects: "6",
-    whereCollegeStoped: "n",
-    aproxEndingDate: "30/07/2023",
-    payingResponsible: "Yo",
-    wentOtherCollege: "n",
-    changedCareer: "n",
-    changedCollege: "n",
-  },
-
-  workExperience: {
-    currentlyWorking: "y",
-    companyName: "Lasa Motors",
-    workPosition: "Developer",
-    workTiming: "Tiempo completo",
-    hiredTime: "4 años y 1 mes",
-    otherCompanyAndPos: "N/A",
-  },
-  familyInformation: {
-    martitalStatus: "divorced",
-    children: "n",
-    liveWith: "Con mis padres",
-    workingParents: "y",
-    ocupations: "Contador y Agrigultora",
-    ownedHouse: "y",
-    siblings: "y",
-    sibligsAmount: "1",
-    closeFamilyAtUS: "n",
-  },
-  exchangeProgram: {
-    goal: "Conocer nuevas culturas",
-    whyDoingProgram: "Para poder viajar y apredender de culturas diferentes",
-    whoIsPaying: "me",
-    wanrrantiers: "y",
-    exchangeBefore: "n",
-    howManyExchanges: "0",
-    atWhichYear: "n/a",
-    agency: "n/a",
-    sponsor: "n/a",
-    whyChangedAgency: "n/a",
-    troublesLastProgram: "n",
-    hasVisitedUS: "n",
-    usVisa: "n",
-    whichVisa: "n/a",
-    usResidenceProcess: "n",
-    usVisaDenied: "n",
-    medCondition: "n",
-    whichMedCondition: "n/a",
-    medicalPrescription: "n",
-    noWorkingDay: "n",
-  },
-
-  grace: {
-    howDidYouKnow: "Amigo",
-    whyChoosedGrace: "Porque está basada en la gracia de Dios.",
-    howToImprove: "",
-    references: "",
-    anyQuestions: "y",
-    questions: "No hay preguntas",
-  },
-};
-
-async function modifyPdf(input, output) {
+module.exports = async function modifyPdf(input, output, data) {
   try {
+    console.log(data);
     const pdfDoc = await PDFDocument.load(await readFile(input));
 
-    // const fields = await pdfDoc.getForm().getFields();
+    //const fields = await pdfDoc.getForm().getFields();
 
     const form = await pdfDoc.getForm();
 
@@ -112,48 +28,63 @@ async function modifyPdf(input, output) {
 
     //Personal Information
 
-    setPersonalInfo(form, data.personalInfo);
+    setPersonalInfo(form, data);
 
     //Academic Information
 
-    setAcademicInfo(form, data.academicInformation);
+    setAcademicInfo(form, data);
 
     //Work Experience
-    setWorkingExperience(form, data.workExperience);
+    setWorkingExperience(form, data);
 
     //Family Information
-    setFamilyInfo(form, data.familyInformation);
+    setFamilyInfo(form, data);
 
     //Program Information
-    setProgramInfo(form, data.exchangeProgram);
+    setProgramInfo(form, data);
 
     //Closing Questions
-    setClosingQuestions(form, data.grace);
+    setClosingQuestions(form, data);
 
     const pdfBytes = await pdfDoc.save();
     await writeFile(output, pdfBytes);
     console.log("Pdf created!");
-  } catch (error) {
-    console.log(error);
-  }
-}
 
-modifyPdf(
-  path.join(__dirname, "form_grace.pdf"),
-  path.join(__dirname, "modified_graceform.pdf")
-);
+    return "Done!";
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
+// modifyPdf(
+//   path.join(__dirname, "form_grace.pdf"),
+//   path.join(__dirname, "modified_graceform.pdf")
+// );
 
 function setPersonalInfo(form, data) {
   //Program
-  form.getCheckBox(`untitled107`).check();
-  form.getCheckBox(`untitled111`).check();
-  form.getCheckBox(`untitled112`).check();
-  form.getCheckBox(`untitled113`).check();
+  switch (data.program) {
+    case "swt":
+      form.getCheckBox(`untitled107`).check();
+      break;
+    case "smc":
+      form.getCheckBox(`untitled113`).check();
+      break;
+    case "intern":
+      form.getCheckBox(`untitled112`).check();
+      break;
+    case "tchprog":
+      form.getCheckBox(`untitled111`).check();
+      break;
+
+    default:
+      break;
+  }
 
   //Personal Information
   form.getTextField("untitled86").setText("no se");
-  form.getTextField("untitled1").setText(data.firstName);
-  form.getTextField("untitled2").setText(data.lastName);
+  form.getTextField("untitled1").setText(data.firstname);
+  form.getTextField("untitled2").setText(data.lastname);
   form.getTextField("untitled3").setText(data.birthDate);
   form.getTextField("untitled4").setText(data.age);
   form.getTextField("untitled5").setText(data.id);
@@ -167,7 +98,8 @@ function setPersonalInfo(form, data) {
 
   if (data.sex == "male") {
     form.getCheckBox(`untitled9`).check();
-  } else {
+  }
+  if (data.sex == "female") {
     form.getCheckBox(`untitled10`).check();
   }
 
@@ -228,27 +160,22 @@ function setAcademicInfo(form, data) {
   form.getTextField("untitled96").setText(data.aproxEndingDate);
   form.getTextField("untitled95").setText(data.payingResponsible);
 
-  data.whereCollegeStoped == "y"
-    ? form.getCheckBox(`untitled23`).check()
-    : form.getCheckBox(`untitled24`).check();
+  data.whereCollegeStoped == "y" && form.getCheckBox(`untitled23`).check();
+  data.whereCollegeStoped == "n" && form.getCheckBox(`untitled24`).check();
 
-  data.wentOtherCollege == "y"
-    ? form.getCheckBox(`untitled25`).check()
-    : form.getCheckBox(`untitled26`).check();
+  data.wentOtherCollege == "y" && form.getCheckBox(`untitled25`).check();
+  data.wentOtherCollege == "n" && form.getCheckBox(`untitled26`).check();
 
-  data.changedCareer == "y"
-    ? form.getCheckBox(`untitled27`).check()
-    : form.getCheckBox(`untitled28`).check();
+  data.changedCareer == "y" && form.getCheckBox(`untitled27`).check();
+  data.changedCareer == "n" && form.getCheckBox(`untitled28`).check();
 
-  data.changedCollege == "y"
-    ? form.getCheckBox(`untitled29`).check()
-    : form.getCheckBox(`untitled30`).check();
+  data.changedCollege == "y" && form.getCheckBox(`untitled29`).check();
+  data.changedCollege == "n" && form.getCheckBox(`untitled30`).check();
 }
 
 function setWorkingExperience(form, data) {
-  data.currentlyWorking == "y"
-    ? form.getCheckBox(`untitled31`).check()
-    : form.getCheckBox(`untitled32`).check();
+  data.currentlyWorking == "y" && form.getCheckBox(`untitled31`).check();
+  data.currentlyWorking == "n" && form.getCheckBox(`untitled32`).check();
 
   form.getTextField("untitled94").setText(data.companyName);
   form.getTextField("untitled93").setText(data.workPosition);
@@ -258,7 +185,7 @@ function setWorkingExperience(form, data) {
 }
 
 function setFamilyInfo(form, data) {
-  switch (data.martitalStatus) {
+  switch (data.maritalStatus) {
     case "single":
       form.getCheckBox(`untitled33`).check();
       break;
@@ -275,31 +202,26 @@ function setFamilyInfo(form, data) {
       break;
   }
 
-  data.children == "y"
-    ? form.getCheckBox(`untitled37`).check()
-    : form.getCheckBox(`untitled38`).check();
+  data.children == "y" && form.getCheckBox(`untitled37`).check();
+  data.children == "n" && form.getCheckBox(`untitled38`).check();
 
   form.getTextField("untitled89").setText(data.liveWith);
 
-  data.workingParents == "y"
-    ? form.getCheckBox(`untitled39`).check()
-    : form.getCheckBox(`untitled40`).check();
+  data.workingParents == "y" && form.getCheckBox(`untitled39`).check();
+  data.workingParents == "n" && form.getCheckBox(`untitled40`).check();
 
   form.getTextField("untitled88").setText(data.ocupations);
 
-  data.ownedHouse == "y"
-    ? form.getCheckBox(`untitled45`).check()
-    : form.getCheckBox(`untitled41`).check();
+  data.ownedHouse == "y" && form.getCheckBox(`untitled45`).check();
+  data.ownedHouse == "n" && form.getCheckBox(`untitled41`).check();
 
-  data.siblings == "y"
-    ? form.getCheckBox(`untitled42`).check()
-    : form.getCheckBox(`untitled43`).check();
+  data.siblings == "y" && form.getCheckBox(`untitled42`).check();
+  data.siblings == "n" && form.getCheckBox(`untitled43`).check();
 
   form.getTextField("untitled87").setText(data.sibligsAmount);
 
-  data.closeFamilyAtUS == "y"
-    ? form.getCheckBox(`untitled44`).check()
-    : form.getCheckBox(`untitled46`).check();
+  data.closeFamilyAtUS == "y" && form.getCheckBox(`untitled44`).check();
+  data.closeFamilyAtUS == "n" && form.getCheckBox(`untitled46`).check();
 }
 
 function setProgramInfo(form, data) {
@@ -323,13 +245,11 @@ function setProgramInfo(form, data) {
       break;
   }
 
-  data.wanrrantiers == "y"
-    ? form.getCheckBox(`untitled51`).check()
-    : form.getCheckBox(`untitled52`).check();
+  data.wanrrantiers == "y" && form.getCheckBox(`untitled51`).check();
+  data.wanrrantiers == "n" && form.getCheckBox(`untitled52`).check();
 
-  data.exchangeBefore == "y"
-    ? form.getCheckBox(`untitled53`).check()
-    : form.getCheckBox(`untitled54`).check();
+  data.exchangeBefore == "y" && form.getCheckBox(`untitled53`).check();
+  data.exchangeBefore == "n" && form.getCheckBox(`untitled54`).check();
 
   form.getTextField("untitled83").setText(data.howManyExchanges);
   form.getTextField("untitled84").setText(data.atWhichYear);
@@ -337,41 +257,33 @@ function setProgramInfo(form, data) {
   form.getTextField("untitled81").setText(data.sponsor);
   form.getTextField("untitled80").setText(data.whyChangedAgency);
 
-  data.troublesLastProgram == "y"
-    ? form.getCheckBox(`untitled55`).check()
-    : form.getCheckBox(`untitled56`).check();
+  data.troublesLastProgram == "y" && form.getCheckBox(`untitled55`).check();
+  data.troublesLastProgram == "n" && form.getCheckBox(`untitled56`).check();
 
-  data.hasVisitedUS == "y"
-    ? form.getCheckBox(`untitled57`).check()
-    : form.getCheckBox(`untitled58`).check();
+  data.hasVisitedUS == "y" && form.getCheckBox(`untitled57`).check();
+  data.hasVisitedUS == "n" && form.getCheckBox(`untitled58`).check();
 
-  data.usVisa == "y"
-    ? form.getCheckBox(`untitled59`).check()
-    : form.getCheckBox(`untitled60`).check();
+  data.usVisa == "y" && form.getCheckBox(`untitled59`).check();
+  data.usVisa == "n" && form.getCheckBox(`untitled60`).check();
 
   form.getTextField("untitled79").setText(data.whichVisa);
 
-  data.usResidenceProcess == "y"
-    ? form.getCheckBox(`untitled61`).check()
-    : form.getCheckBox(`untitled62`).check();
+  data.usResidenceProcess == "y" && form.getCheckBox(`untitled61`).check();
+  data.usResidenceProcess == "n" && form.getCheckBox(`untitled62`).check();
 
-  data.usVisaDenied == "y"
-    ? form.getCheckBox(`untitled63`).check()
-    : form.getCheckBox(`untitled64`).check();
+  data.usVisaDenied == "y" && form.getCheckBox(`untitled63`).check();
+  data.usVisaDenied == "n" && form.getCheckBox(`untitled64`).check();
 
-  data.medCondition == "y"
-    ? form.getCheckBox(`untitled65`).check()
-    : form.getCheckBox(`untitled66`).check();
+  data.medCondition == "y" && form.getCheckBox(`untitled65`).check();
+  data.medCondition == "n" && form.getCheckBox(`untitled66`).check();
 
   form.getTextField("untitled78").setText(data.whichMedCondition);
 
-  data.medicalPrescription == "y"
-    ? form.getCheckBox(`untitled67`).check()
-    : form.getCheckBox(`untitled68`).check();
+  data.medicalPrescription == "y" && form.getCheckBox(`untitled67`).check();
+  data.medicalPrescription == "n" && form.getCheckBox(`untitled68`).check();
 
-  data.noWorkingDay == "y"
-    ? form.getCheckBox(`untitled69`).check()
-    : form.getCheckBox(`untitled70`).check();
+  data.noWorkingDay == "y" && form.getCheckBox(`untitled69`).check();
+  data.medicalPrescription == "n" && form.getCheckBox(`untitled70`).check();
 }
 
 function setClosingQuestions(form, data) {
@@ -380,9 +292,8 @@ function setClosingQuestions(form, data) {
   form.getTextField(`untitled75`).setText(data.howToImprove);
   form.getTextField(`untitled74`).setText(data.references);
 
-  data.anyQuestions == "y"
-    ? form.getCheckBox(`untitled71`).check()
-    : form.getCheckBox(`untitled72`).check();
+  data.anyQuestions == "y" && form.getCheckBox(`untitled71`).check();
+  data.anyQuestions == "n" && form.getCheckBox(`untitled72`).check();
 
   form.getTextField(`untitled73`).setText(data.questions);
 }

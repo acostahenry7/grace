@@ -77,6 +77,9 @@ function underLine(element) {
 
 $("#applicationForm").submit((e) => {
   e.preventDefault();
+
+  //console.log($("#applicationForm").serialize());
+
   $.ajax({
     url: $("#applicationForm").attr("action"),
     type: "POST",
