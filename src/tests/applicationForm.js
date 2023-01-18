@@ -1,10 +1,10 @@
 fixture("Application Form").page("http://localhost:3002");
 
 let baseObj = {
-  // program: "smc",
   personalInformation: {
-    firstname: "henry",
-    lastname: "acosta",
+    program: "smc",
+    firstname: "Carlos",
+    lastname: "Santana",
     birthDate: "1999-11-29",
     sex: "male",
     age: "23",
@@ -17,7 +17,7 @@ let baseObj = {
     nacionality: "Dominicano",
     address: "Ensanche La Paz, La Feria",
     shirtSize: "m",
-    emergencyContact: "",
+    emergencyContact: "Regina Vargas (8094633774)",
   },
   academicInformation: {
     college: "Universidad Dominicana O&M",
@@ -28,8 +28,10 @@ let baseObj = {
     lastSubjects: "5",
     whereCollegeStoped: "n",
     aproxEndingDate: "2024-01-11",
+    payingResponsible: "Yo",
     wentOtherCollege: "n",
     changedCareer: "n",
+    changedCollege: "n",
   },
 
   workExperience: {
@@ -57,20 +59,21 @@ let baseObj = {
     goal: "Intercambio cultural",
     whyDoingProgram: "Conocer otra cultura",
     whoIsPaying: "me",
-    wanrrantiers: "me",
-    exchangeBefore: "n",
+    wanrrantiers: "y",
+    exchangeBefore: "y",
     howManyExchanges: "0",
-    atWhichYear: "",
-    agency: "",
-    sponsor: "",
-    whyChangedAgency: "",
+    atWhichYear: "2020",
+    agency: "test",
+    sponsor: "Ramon",
+    whyChangedAgency: "Mal servicio",
+    troublesLastProgram: "y",
     hasVisitedUS: "n",
     usVisa: "n",
-    whichVisa: "",
+    whichVisa: "J1",
     usResidenceProcess: "n",
-    usVisaDenied: "n",
-    medCondition: "n",
-    whichMedCondition: "",
+    usVisaDenied: "y",
+    medCondition: "y",
+    whichMedCondition: "Covid",
     medicalPrescription: "n",
     noWorkingDay: "n",
   },
@@ -78,7 +81,7 @@ let baseObj = {
   grace: {
     howDidYouKnow: "instagram",
     whyChoosedGrace: "Por sus valores",
-    howToImprove: "",
+    howToImprove: "No sé",
     references: "Juan Perez 8096556332",
     anyQuestions: "y",
     questions: "Como se agenda una entrevista?",
@@ -96,10 +99,17 @@ test("Filling the form", async (t) => {
     for (let i = 0; i < Object.entries(currentObject).length; i++) {
       console.log("hola", typeof Object.values(currentObject)[i]);
       try {
-        await t.typeText(
-          `input[name=${Object.keys(currentObject)[i]}]`,
-          `${Object.values(currentObject)[i]}`
-        );
+        if (x == 0 && i == 0) {
+          await t.click(`select[name=${Object.keys(currentObject)[i]}]`);
+          await t.click(`option[value=${Object.values(currentObject)[i]}]`);
+
+          console.log(Object.keys(currentObject)[i]);
+        } else {
+          await t.typeText(
+            `input[name=${Object.keys(currentObject)[i]}]`,
+            `${Object.values(currentObject)[i]}`
+          );
+        }
       } catch (error) {
         errors.push({
           key: Object.keys(currentObject)[i],

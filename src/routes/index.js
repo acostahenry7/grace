@@ -218,11 +218,10 @@ module.exports = (app) => {
     });
     var mailOptions = {
       from: "app@graceinternational.com.do",
-      to: "acostahenry7@gmail.com",
-      //to: req.body.email,
+      to: ["acostahenry7@gmail.com, info@graceinternational.com.do"],
       attachments: [
         {
-          filename: `Formulario-aplicación${req.body.firstname}-${req.body.lastname}.pdf`,
+          filename: `Formulario-aplicación-${req.body.firstname}-${req.body.lastname}.pdf`,
           path: path.join(__dirname, "./modified_graceform.pdf"),
         },
       ],
@@ -240,15 +239,15 @@ module.exports = (app) => {
       console.log(error);
     }
 
-    // transporter.sendMail(mailOptions, (err, info) => {
-    //   if (err) {
-    //     console.log(err);
-    //     res.send({ sent: false });
-    //   } else {
-    //     console.log("Emal sent: ", info);
-    //     res.send({ sent: true });
-    //   }
-    // });
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.log(err);
+        res.send({ sent: false });
+      } else {
+        console.log("Emal sent: ", info);
+        res.send({ sent: true });
+      }
+    });
     res.send({ message: "done" });
   });
 

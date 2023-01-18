@@ -102,6 +102,11 @@ body {
   transition: transform 0.2s ease-in-out;
 }
 
+.mapouter,
+.gmap_canvas {
+  height: 400px !important;
+}
+
 #cat1[aria-expanded="false"] > #cat1_icon,
 #cat2[aria-expanded="false"] > #cat2_icon,
 #cat3[aria-expanded="false"] > #cat3_icon,

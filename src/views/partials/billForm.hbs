@@ -14,28 +14,7 @@
 
           <form  id="applicationForm" class="" action="/request/mail" method="post">
             <div class="row" style="margin-top: 70px;" >
-              {{!-- <div class="col-md-6">
-                <div class="form-group">
-                  <input
-                    class="form-control"
-                    type="text"
-                    name="name"
-                    value=""
-                    placeholder="Nombre"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input
-                    class="form-control"
-                    type="text"
-                    name="email"
-                    value=""
-                    placeholder="Correo"
-                  />
-                </div>
-              </div> --}}
+              
               <div class="col-md-12">
                 
                 <div  class="form-group">
@@ -114,22 +93,22 @@
                   <label>Nivel de Inglés</label>
                   <div style="display: flex; flex-direction: column">
                     <div>
-                      <input value="c2" name="englishLevel" style="display: inline-block" type="radio" /> <span>C2</span>
+                      <input value="c2" name="englishLevel" style="display: inline-block" type="radio" /> <span>C2 Profesional Avanzado</span>
                   </div>
                   <div>
-                      <input value="c1" name="englishLevel" style="display: inline-block" type="radio" /> <span>C1</span>
+                      <input value="c1" name="englishLevel" style="display: inline-block" type="radio" /> <span>C1 Avanzado</span>
                   </div>
                   <div>
-                      <input value="b2" name="englishLevel" style="display: inline-block" type="radio" /> <span>B2</span>
+                      <input value="b2" name="englishLevel" style="display: inline-block" type="radio" /> <span>B2 Intermedio Avanzado</span>
                   </div>
                   <div>
-                      <input value="b1" name="englishLevel" style="display: inline-block" type="radio" /> <span>B1</span>
+                      <input value="b1" name="englishLevel" style="display: inline-block" type="radio" /> <span>B1 Intermedio básico</span>
                   </div>
                   <div>
-                      <input value="a2" name="englishLevel" style="display: inline-block" type="radio" /> <span>A2</span>
+                      <input value="a2" name="englishLevel" style="display: inline-block" type="radio" /> <span>A2 Nivel Básico</span>
                   </div>
                   <div>
-                      <input value="a1" name="englishLevel" style="display: inline-block" type="radio" /> <span>A1</span>
+                      <input value="a1" name="englishLevel" style="display: inline-block" type="radio" /> <span>A1 Nivel Elemental</span>
                   </div>
                   </div>
               </div>
@@ -167,7 +146,7 @@
               
               <div class="form-group">
                   <label>Contacto de Emergencia</label>
-                  <input type="text" name="emergencyContact" class="form-control" placeholder="">
+                  <input type="text" name="emergencyContact" class="form-control" placeholder="(Nombre, parentesco y número de teléfono.">
               </div>
                 </div>
 
@@ -340,7 +319,7 @@
                 </div>
               <div class="form-group">
                   <label>¿Actualmente, con quién vives?</label>
-                  <input type="text" name="liveWith" style="" class="form-control" placeholder="Empresa"/>
+                  <input type="text" name="liveWith" style="" class="form-control" placeholder=""/>
               </div>
               <div class="form-group">
                   <label>¿Tus padres trabajan?</label>
@@ -587,10 +566,17 @@
                       <input value="instagram" name="howDidYouKnow" style="display: inline-block" type="radio" class=""/> <span>Instagram</span>
                   </div>
                   <div>
+                      <input value="youtube" name="howDidYouKnow" style="display: inline-block" type="radio" class=""/> <span>Youtube</span>
+                  </div>
+                  <div>
                       <input value="college" name="howDidYouKnow" style="display: inline-block" type="radio" class=""/> <span>Universidad</span>
                   </div>
                   <div>
                       <input value="friend" name="howDidYouKnow" style="display: inline-block" type="radio" class=""/> <span>Amigo</span>
+                  </div>
+                  
+                  <div>
+                      <input value="other" name="howDidYouKnow" style="display: inline-block" type="radio" class=""/> <span>Otro</span>
                   </div>
                   </div>
                 </div>
