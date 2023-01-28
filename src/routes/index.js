@@ -82,9 +82,22 @@ module.exports = (app) => {
     view.sdTitle = "REQUISITOS";
     view.sdImage = "/public/media/images/summercamp.png";
     view.sdList = [
-      { item: " Ser estudiante universitario activo a tiempo completo" },
-      { item: " Tener de 18 a 29 años de edad" },
-      { item: " Nivel mínimo de inglés: intermedio-conversacional" },
+      { item: "Ser estudiante universitario activo a tiempo completo" },
+      { item: "Tener de 18 a 29 años de edad" },
+      {
+        item: "Inglés HABLADO suficiente para interactuar con jóvenes en los EE.UU.",
+      },
+      {
+        item: `Cualquiera de las sigtes: Ser estudiante; profesor, haber trabajado con jóvenes o niños; tener alguna habilidad
+      especial, por e.g. un deporte🏀; teatro🎭; arte🎨; baile💃🕺; Música🎸; actividades extremas🧗‍♂️ o cualquier
+      habilidad útil en un campamento de verano.`,
+      },
+      {
+        item: "Disponibilidad de permanecer 2-3 meses en EE.UU.",
+      },
+      {
+        item: "Retornar al país un vez termine el programa",
+      },
     ];
 
     view.tdTitle = "Recursos";
@@ -190,9 +203,16 @@ module.exports = (app) => {
     view.sdTitle = "Requisitos";
     view.sdImage = "/public/media/images/swt_1.png";
     view.sdList = [
-      { item: " Ser estudiante universitario activo a tiempo completo" },
-      { item: " Tener de 18 a 28 años de edad" },
-      { item: " Nivel mínimo de inglés: básico-alto conversacional" },
+      {
+        item: `Ser estudiante universitario de tiempo completo, es decir, tener un mínimo de 12 créditos por
+      periodo y haber cursado por lo menos uno.`,
+      },
+      {
+        item: `Tener un nivel de inglés mínimo básico-alto CONVERSACIONAL. Es decir, que puedas desenvolverte
+      en la comunicación oral del idioma en situaciones cotidianas.`,
+      },
+      { item: `-Tener de 18 a 28 años de edad` },
+      { item: `-Retornar al país una vez el programa finalice` },
     ];
 
     view.tdTitle = "Recursos";
