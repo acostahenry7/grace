@@ -1,0 +1,59 @@
+<div class="internspain internspain-bg">
+  <div class="container">
+    <h3 class="service-title">Pasantía en España</h3>
+    <img src="/public/media/images/chef-spain.png" alt="" />
+  </div>
+</div>
+<div class="container internspain-section" style="padding-bottom:  0;">
+  <h3 class="service-title text-dark">¿En qué consiste este programa?</h3>
+
+  <p class="internspain-description"><b>Esta opción ofrece una oportunidad de
+      generar experiencia profesional práctica con las mejores empresas del
+      sector en España.</b>
+    El objetivo de este programa es mejorar las habilidades y la experiencia de
+    los participantes internacionales en sus campos profesionales a través de la
+    participación en una práctica no-laboral, estructurada, guiada y basada en
+    el trabajo. De esta forma podrán desarrollar su conocimiento de las
+    técnicas, metodologías y buenas prácticas de la industria hostelera europea.</p>
+
+</div>
+<div class="container summercamp-section">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="service-title text-dark">REQUISITOS</h3>
+      <ul>
+        {{#each requirements}}
+          <li> <i class="fas fa-caret-right text-primary"></i> {{item}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{!-- <div class="col-md-6 summercamp-section-image">
+      {{! <img src="/public/media/images/summercamp.png" alt="" /> }}
+    </div> --}}
+  </div>
+</div>
+<hr class="m-0" />
+<div
+  class="internspain-section container"
+  style="padding-bottom: 0 !important;"
+>
+  <div class="row">
+    <div class="col-md-6 internspain-section-image pb-0 pr-0">
+      <img src="/public/media/images/man_pointing_right.png" alt="" />
+    </div>
+    <div class="col-md-6 intership-resources">
+      <h3 class="service-title text-dark">RECURSOS</h3>
+      <ul>
+        {{#each resources}}
+          <li class="shadow mt-1">
+
+            <a href="{{link}}" class=""><i
+                class="fas fa-download"
+              ></i>{{item}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,77 @@
+.internship {
+  padding: 30px 0 35px 0;
+}
+
+.internship-bg {
+  width: 100%;
+  background: linear-gradient(to right, black 40%, transparent 100%),
+    url("/public/media/images/internship-bg.JPG");
+  object-fit: cover;
+  /* background-repeat: no-repeat; */
+  background-position: 0 50%;
+}
+
+.internship-bg img {
+  max-width: 40%;
+  opacity: 0.8;
+}
+
+.internship-section {
+  padding: 100px 20px;
+}
+
+.internship-section ul {
+  list-style: none;
+}
+
+.internship-section ul li {
+  color: #808080;
+  padding: 10px 0;
+  border-bottom: solid 1px #eeeeee;
+  background-color: white;
+  text-align: left;
+}
+
+.internship-section ul li:last-child {
+  border-bottom: none;
+}
+
+.internship-section ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.intership-section img {
+  width: 100%;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.internship-section-image {
+  padding: 50px;
+}
+
+.internship-section-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.intership-resources ul li {
+  background-color: #0088cc;
+  font-family: "Bebas Neue", cursive;
+  border-radius: 5px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .internship-section ul {
+    padding-left: 0;
+  }
+
+  .internship-bg img {
+    display: none;
+  }
+}

@@ -116,6 +116,13 @@ body {
   transform: rotate(-90deg);
 }
 
+.description {
+  color: #808080;
+  padding: 0 30px;
+  background-color: white;
+  text-align: left;
+}
+
 @media screen and (max-width: 767px) {
   .know_us_container {
     margin-top: 30px;

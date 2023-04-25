@@ -61,27 +61,9 @@ module.exports = (app) => {
     res.render("home", view);
   });
 
-  router.get("/multimedia", (req, res) => {
-    res.render("multimedia");
-  });
-
   router.get("/services/summercamp", (req, res) => {
     let view = {};
-    view.fdTitle = "SUMMER CAMP";
-    view.fdImage = "/public/media/images/flight.png";
-    view.bgImage = "servers_bg_img";
-    /*view.fdList = [
-          { item: "Instalación y Configuración" },
-          { item: "Mantenimiento"},
-          { item: "Mejora de Rendimiento"},
-          { item: "Backup de Data Corporativo"},
-          { item: "Instalación y Gestión de Software"},
-          { item: "Configuración de Sistema Failover"}
-        ]*/
-
-    view.sdTitle = "REQUISITOS";
-    view.sdImage = "/public/media/images/summercamp.png";
-    view.sdList = [
+    view.requirements = [
       { item: "Ser estudiante universitario activo a tiempo completo" },
       { item: "Tener de 18 a 29 años de edad" },
       {
@@ -99,94 +81,19 @@ module.exports = (app) => {
         item: "Retornar al país un vez termine el programa",
       },
     ];
-
-    view.tdTitle = "Recursos";
-    view.tdImage = "/public/media/images/summercamp2.png";
-    view.tdList = [
+    view.resources = [
       {
-        item: " Descargar información del programa (PDF) -- Coming Soon",
+        item: " Descarga toda la información de nuestro programa",
         link: "/download/summerCampInfo",
       },
-      // { item: " Servidores de virtualización " },
-      // { item: " Servidores de BD (Oracle, PostgreSQL, MySQL, MongoDB, etc) " },
-      // { item: " Central Telefónica basada Asterisk PBX (FreePBX) " },
-      // { item: " Otros Servicios. " },
     ];
-    res.render("services", view);
+    res.render("summercamp", view);
   });
-  router.get("/services/networking", (req, res) => {
-    let view = {};
-    view.fdTitle = "Infraestructura de Redes";
-    view.fdImage = "/public/media/images/switches.png";
-    view.bgImage = "networking_bg_img";
-    view.fdList = [
-      { item: "Instalación y Configuración" },
-      { item: "Mantenimiento" },
-      { item: "Mejora de Rendimiento" },
-      { item: "Instalación y Gestión de Software" },
-      { item: "Configuración de Sistema Failover" },
-    ];
 
-    view.sdTitle = "Conoce nuestros servicios de Redes";
-    view.sdImage = "/public/media/images/wire-net.png";
-    view.sdList = [
-      {
-        item: " Diseña e instalación de redes informáticas, conexiones y cableado",
-      },
-      { item: " Diagnósitico y reparación de fallos en la red " },
-      { item: " configuración del software de los dispositivos de Redes" },
-      { item: " Evaluación de la red en busca de mejor rendimiento" },
-      { item: " Puntos de Red para entornos corporativos u hogareños" },
-    ];
-
-    view.tdTitle = "Con las marcas líder del Mercado";
-    view.tdImage = "/public/media/images/unifi2.png";
-    view.tdList = [
-      { item: " Ubiquiti Unifi " },
-      { item: " Cisco" },
-      { item: " Huawei" },
-      /*{ item: ' ' },
-         { item: ' ' },
-         { item: ' ' }*/
-    ];
-
-    res.render("services", view);
+  router.get("/multimedia", (req, res) => {
+    res.render("multimedia");
   });
-  router.get("/services/development", (req, res) => {
-    let view = {};
-    view.fdTitle = "Desarrollo de Software";
-    view.fdImage =
-      "https://clarusway.com/wp-content/uploads/2021/04/step-to-become-a-full-stack-developer.png";
-    view.bgImage = "dev_bg_img";
-    view.fdList = [
-      { item: "Nuestros Lenguajes: " },
-      { item: "JS" },
-      { item: "Java" },
-      { item: "Python" },
-    ];
 
-    view.sdTitle = "Conoce nuestros servicios de Desarrollo de Software";
-    view.sdImage = "/public/media/images/development.png";
-    view.sdList = [
-      { item: " Diseña de applicaciones Web y Desktop" },
-      { item: " Implementación de modulos en sistemas" },
-      { item: " configuración del software de los dispositivos de Redes" },
-    ];
-
-    view.tdTitle = "Frameworks";
-    view.tdImage = "/public/media/images/frameworks.png";
-    view.tdList = [
-      { item: " Django" },
-      { item: " Angular JS" },
-      { item: " React JS" },
-      { item: " Vue JS" },
-      /*{ item: ' ' },
-              { item: ' ' },
-              { item: ' ' }*/
-    ];
-
-    res.render("services", view);
-  });
   router.get("/services/summerwork", (req, res) => {
     var view = {};
     view.fdTitle = "Summer Work & Travel";
@@ -218,13 +125,106 @@ module.exports = (app) => {
     view.tdTitle = "Recursos";
     view.tdImage = "/public/media/images/smwt_2.jpg";
     view.tdList = [
-      { item: "Fotos" },
-      { item: "Descargar información del Programa (PDF) -- Coming Soon" },
+      {
+        item: "Descarga toda la info de este programa.",
+        link: "/download/swtInfo",
+      },
       /*{ item: ' ' },
             { item: ' ' },
             { item: ' ' }*/
     ];
     res.render("services", view);
+  });
+
+  router.get("/services/internship", (req, res) => {
+    let view = {};
+    view.internReqs = [
+      { item: "Tener de 18 a 29 años." },
+      {
+        item: "Ser estudiante de término en un centro oficial de educación superior o menos de un año de graduado.",
+      },
+      {
+        item: "Nivel de inglés intermedio-alto",
+      },
+    ];
+    view.traineeReqs = [
+      { item: "Tener de 18 a 30 años." },
+      {
+        item: `Ser graduado y tener al menos un año de experiencia laboral en el área de hotelería y turismo, si no se posee
+        un título universitario, entonces se requiere al menos 5 años de experiencia laboral demostrable en el
+        área.`,
+      },
+      {
+        item: "Nivel de inglés intermedio-alto",
+      },
+    ];
+    view.resources = [
+      {
+        item: " Descarga toda la información acerca estos programas.",
+        link: "/download/internshipInfo",
+      },
+    ];
+
+    res.render("internship", view);
+  });
+
+  router.get("/services/teaching", (req, res) => {
+    let view = {};
+    view.requirements = [
+      {
+        item: "Ser licenciado en educación o en el campo académico en el que pretenden enseñar.",
+      },
+      {
+        item: "Tener un mínimo de dos años de enseñanza o experiencia profesional relacionada.",
+      },
+      {
+        item: `Estar trabajando como maestro en el país de residencia legal en el momento de la solicitud o, si no está trabajando
+        como maestro, haber completado recientemente (dentro de los 12 meses posteriores a la solicitud) un título avanzado
+        y Tener dos años de experiencia docente a tiempo completo en los últimos ocho años`,
+      },
+      {
+        item: `Poseer un dominio excelente del idioma inglés (min. Full B2-Upper Intermediate)`,
+      },
+    ];
+    view.resources = [
+      {
+        item: " Descarga toda la información de nuestro programa",
+        link: "/download/teachingInfo",
+      },
+    ];
+
+    res.render("teaching", view);
+  });
+
+  router.get("/services/intern-spain", (req, res) => {
+    let view = {};
+    view.requirements = [
+      {
+        item: "Tener de 18 a 29 años.",
+      },
+      {
+        item: `Ser estudiante de termino en la carrera de Hotelería y Turismo, o haber sido graduado en menos de 12
+        meses en la misma carrera.`,
+      },
+      {
+        item: `Hablar bien Español (inglés no es necesario)`,
+      },
+      {
+        item: `Tener cedula dominicana`,
+      },
+      {
+        item: `Disponibilidad para permanecer 6 meses en España`,
+      },
+    ];
+
+    view.resources = [
+      {
+        item: " Descarga toda la información de nuestro programa",
+        link: "/download/interSpainInfo",
+      },
+    ];
+
+    res.render("internspain", view);
   });
 
   router.post("/request/mail", async (req, res) => {
@@ -321,10 +321,25 @@ module.exports = (app) => {
     var file = "";
     switch (req.params.filename) {
       case "summerCampInfo":
-        file = `${__dirname}/../public/resources/example.txt`;
+        file = `${__dirname}/../public/resources/bch_summercamp.pdf`;
         res.download(file);
         break;
-
+      case "swtInfo":
+        file = `${__dirname}/../public/resources/bch_swt.pdf`;
+        res.download(file);
+        break;
+      case "internshipInfo":
+        file = `${__dirname}/../public/resources/bch_internship.pdf`;
+        res.download(file);
+        break;
+      case "teachingInfo":
+        file = `${__dirname}/../public/resources/bch_teachusa.pdf`;
+        res.download(file);
+        break;
+      case "interSpainInfo":
+        file = `${__dirname}/../public/resources/bch_spain.pdf`;
+        res.download(file);
+        break;
       default:
         break;
     }

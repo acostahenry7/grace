@@ -1,5 +1,11 @@
 /*import 'animate.css';*/
 
+.service-title {
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  padding: 30px;
+}
+
 .y-aligned {
   margin-top: auto;
   margin-bottom: auto;
@@ -13,9 +19,85 @@
 
 .servers_bg_img {
   width: 100%;
-  background: linear-gradient(to right, black 30%, transparent 100%),
+  background: linear-gradient(to right, black 50%, transparent 100%),
     url("/public/media/images/summercamp_bg.jpg");
   background-position: 0 -30%;
+}
+
+.summercamp {
+  padding: 30px 0 35px 0;
+}
+
+.summercamp-bg {
+  width: 100%;
+  background: linear-gradient(to right, black 40%, transparent 100%),
+    url("/public/media/images/summercamp_bg.jpg");
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: 0 60%;
+}
+
+.summercamp-bg img {
+  max-width: 40%;
+}
+
+.summercamp-section {
+  padding: 100px 20px;
+}
+
+.summercamp-section ul {
+  list-style: none;
+}
+
+.summercamp-section ul li {
+  color: #808080;
+  padding: 10px 0;
+  border-bottom: solid 1px #eeeeee;
+  background-color: white;
+  text-align: left;
+}
+
+.summercamp-section ul li:last-child {
+  border-bottom: none;
+}
+
+.summercamp-section ul li a {
+  text-decoration: none;
+  color: darkblue;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.resources ul li {
+  background-color: #0088cc;
+  font-family: "Bebas Neue", cursive;
+  border-radius: 5px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.resources ul li:hover {
+  background-color: #065780;
+}
+
+.resources ul li a {
+  transition: 500ms;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.summercamp-section img {
+  width: 100%;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.summercamp-section-image {
+  padding: 50px;
+}
+
+.summercamp-section-image img {
+  height: 100%;
 }
 
 .networking_bg_img {
@@ -150,7 +232,11 @@
   color: white;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 992px) {
+  .summercamp img {
+    max-width: 100%;
+  }
+
   .program_icon_container {
     display: flex;
     flex-direction: column;
@@ -166,5 +252,18 @@
 
   .program_inner_icon {
     font-size: 80px;
+  }
+
+  .summercamp-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .summercamp-section ul {
+    padding-left: 0;
+  }
+
+  .service-title {
+    text-align: center;
   }
 }

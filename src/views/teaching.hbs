@@ -1,0 +1,57 @@
+<div class="teachusa teachusa-bg">
+  <div class="container">
+    <h3 class="service-title">TEACH USA PROGRAM</h3>
+    <img src="/public/media/images/teacher_2.png" alt="" />
+  </div>
+</div>
+<div class="container teachusa-section" style="padding-bottom:  0;">
+  <h3 class="service-title text-dark">¿En qué consiste este programa?</h3>
+
+  <p class="teachusa-description">El programa Teach USA ofrece a maestros la
+    oportunidad de obtener un conocimiento de primera mano de los Estados Unidos
+    a través de una experiencia de intercambio cultural y profesional. Los
+    maestros son ubicados en escuelas anfitrionas K-12 acreditadas de EE. UU.
+    para servir como maestros principales en su materia (ESL/EFL; Math; Science;
+    Spanish, Special Education; K-12, ect.) Los maestros que participan en este
+    programa pueden perfeccionar sus habilidades profesionales y liderar
+    actividades interculturales en escuelas y comunidades. Además, los maestros
+    reciben los mismos beneficios que un maestro americano.</p>
+
+</div>
+<div class="container summercamp-section">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="service-title text-dark">REQUISITOS</h3>
+      <ul>
+        {{#each requirements}}
+          <li> <i class="fas fa-caret-right text-primary"></i> {{item}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{!-- <div class="col-md-6 summercamp-section-image">
+      {{! <img src="/public/media/images/summercamp.png" alt="" /> }}
+    </div> --}}
+  </div>
+</div>
+<hr class="m-0" />
+<div class="teachusa-section container" style="padding-bottom: 0 !important;">
+  <div class="row">
+    <div class="col-md-6 teachusa-section-image pb-0 pr-0">
+      <img src="/public/media/images/man_pointing_right.png" alt="" />
+    </div>
+    <div class="col-md-6 intership-resources">
+      <h3 class="service-title text-dark">RECURSOS</h3>
+      <ul>
+        {{#each resources}}
+          <li class="shadow mt-1">
+
+            <a href="{{link}}" class=""><i
+                class="fas fa-download"
+              ></i>{{item}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+</div>

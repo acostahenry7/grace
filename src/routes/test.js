@@ -76,7 +76,9 @@ function setPersonalInfo(form, data) {
     case "tchprog":
       form.getCheckBox(`untitled111`).check();
       break;
-
+    case "internspain":
+      //form.getCheckBox(`untitled111`).check();
+      break;
     default:
       break;
   }

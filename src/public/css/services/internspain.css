@@ -1,0 +1,85 @@
+.internspain {
+  padding: 30px 0 35px 0;
+}
+
+.internspain-bg {
+  width: 100%;
+  background: linear-gradient(to right, black 35%, transparent 100%),
+    url("/public/media/images/hotel-spain.jpg");
+  object-fit: cover;
+  /* background-repeat: no-repeat; */
+  background-position: 0 50%;
+}
+
+.internspain-bg img {
+  max-width: 40%;
+  height: 350px;
+  opacity: 0.7;
+}
+
+.internspain-section {
+  padding: 100px 20px;
+}
+
+.internspain-section ul {
+  list-style: none;
+}
+
+.internspain-section ul li {
+  color: #808080;
+  padding: 10px 0;
+  border-bottom: solid 1px #eeeeee;
+  background-color: white;
+  text-align: left;
+}
+
+.internspain-section ul li:last-child {
+  border-bottom: none;
+}
+
+.internspain-section ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.internspain-description {
+  padding: 0;
+  text-align: justify;
+  color: #808080;
+}
+
+.intership-section img {
+  width: 100%;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.internspain-section-image {
+  padding: 50px;
+}
+
+.internspain-section-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.internspain-resources ul li {
+  background-color: #0088cc;
+  font-family: "Bebas Neue", cursive;
+  border-radius: 5px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .internspain-section ul {
+    padding-left: 0;
+  }
+
+  .internspain-bg img {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+<div class="summercamp summercamp-bg">
+  <div class="container">
+    <h3 class="service-title">SUMMER CAMP</h3>
+    <img src="/public/media/images/flight.png" alt="" />
+  </div>
+</div>
+<div class="container summercamp-section">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="service-title text-dark">REQUISITOS</h3>
+      <ul>
+        {{#each requirements}}
+          <li> <i class="fas fa-caret-right text-primary"></i> {{item}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-6 summercamp-section-image">
+      <img src="/public/media/images/summercamp.png" alt="" />
+    </div>
+  </div>
+</div>
+<hr class="m-0" />
+<div class="summercamp-section container" style="padding-bottom: 0 !important;">
+  <div class="row">
+    <div class="col-md-6 summercamp-section-image pb-0 pr-0">
+      <img src="/public/media/images/man_pointing_right.png" alt="" />
+    </div>
+    <div class="col-md-6 resources">
+      <h3 class="service-title text-dark">RECURSOS</h3>
+      <ul>
+        {{#each resources}}
+          <li class="shadow">
+
+            <a href="{{link}}" class=""><i
+                class="fas fa-download"
+              ></i>{{item}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+</div>
