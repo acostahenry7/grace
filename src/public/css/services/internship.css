@@ -5,7 +5,7 @@
 .internship-bg {
   width: 100%;
   background: linear-gradient(to right, black 40%, transparent 100%),
-    url("/public/media/images/internship-bg.JPG");
+    url("/public/media/images/internship-bg.jpg");
   object-fit: cover;
   /* background-repeat: no-repeat; */
   background-position: 0 50%;

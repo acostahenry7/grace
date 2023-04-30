@@ -5,7 +5,7 @@
 .teachusa-bg {
   width: 100%;
   background: linear-gradient(to right, black 25%, transparent 100%),
-    url("/public/media/images/classroom-3.jpg");
+    url("/public/media/images/classroom-3.JPG");
   object-fit: cover;
   /* background-repeat: no-repeat; */
   background-position: 0 50%;
