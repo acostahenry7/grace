@@ -1,4 +1,4 @@
-fixture("Application Form").page("http://localhost:3002");
+fixture("Application Form").page("https://graceinternational.com.do");
 
 let baseObj = {
   personalInformation: {
