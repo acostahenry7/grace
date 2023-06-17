@@ -5,6 +5,7 @@ $(document).ready(function () {
 
     //  console.log($("#applicationForm").serialize());
     console.log("hi");
+    $("#appFormSubmit").prop("disabled", true);
     $.ajax({
       url: $("#applicationForm").attr("action"),
       type: "POST",
@@ -12,6 +13,7 @@ $(document).ready(function () {
       success: (res) => {
         console.log("hi");
         $("#applicationForm")[0].reset();
+        $("#appFormSubmit").prop("disabled", false);
         $("#messageModalLabel").text("Listo!");
         $("#messageModalIcon").addClass("fas fa-check text-success");
         $("#messageModalBody").text(
@@ -21,6 +23,7 @@ $(document).ready(function () {
       },
       error: ({ status, statusText }) => {
         console.log(`Error: ${status} ${statusText}`);
+        $("#appFormSubmit").prop("disabled", false);
         $("#messageModalLabel").text("Error!");
         $("#messageModalIcon").addClass(
           "fas fa-exclamation-triangle text-danger"
@@ -28,7 +31,7 @@ $(document).ready(function () {
         $("#messageModalBody").html(
           `Hubo un error al enviar tu formulario, inténtalo una vez más. 
           <p>Si el error persiste, contáctanos a través de nuestro
-          correo <b>info@graceinternational.com</b> o en nuestro número telefónico <b>829-241-0234</b></p>`
+          correo <b>info@graceinternational.com.do</b> o en nuestro número telefónico <b>829-241-0234</b></p>`
         );
 
         $("#messageModal").modal("show");
