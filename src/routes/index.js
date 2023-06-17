@@ -238,6 +238,7 @@ module.exports = (app) => {
     });
     var mailOptions = {
       from: "app@graceinternational.com.do",
+      // from: "graceinternationalexchange@gmail.com",
       to: ["acostahenry7@gmail.com, info@graceinternational.com.do"],
       attachments: [
         {

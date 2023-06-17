@@ -75,22 +75,6 @@ function underLine(element) {
   $(element).css("padding-bottom", "2px");
 }
 
-$("#applicationForm").submit((e) => {
-  e.preventDefault();
-
-  //console.log($("#applicationForm").serialize());
-
-  $.ajax({
-    url: $("#applicationForm").attr("action"),
-    type: "POST",
-    data: $("#applicationForm").serialize(),
-    success: (res) => {
-      console.log(res);
-      $("#applicationForm")[0].reset();
-    },
-  });
-});
-
 function hello(src) {
   $("#showImageModal_img").attr("src", src);
   $("#showImageModal").modal("show");

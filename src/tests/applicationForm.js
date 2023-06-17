@@ -1,10 +1,11 @@
-fixture("Application Form").page("https://graceinternational.com.do");
+//fixture("Application Form").page("https://graceinternational.com.do");
+fixture("Application Form").page("http://localhost:3002");
 
 let baseObj = {
   personalInformation: {
     program: "smc",
-    firstname: "Carlos",
-    lastname: "Santana",
+    firstname: "Kyle (test)",
+    lastname: "Jeferson",
     birthDate: "1999-11-29",
     sex: "male",
     age: "23",
@@ -121,4 +122,5 @@ test("Filling the form", async (t) => {
 
   console.log(errors);
   await t.click("#appFormSubmit");
+  setTimeout(() => console.log("hola"), 4000);
 });
