@@ -1,11 +1,11 @@
-//fixture("Application Form").page("https://graceinternational.com.do");
-fixture("Application Form").page("http://localhost:3002");
+fixture("Application Form").page("https://graceinternational.com.do");
+// fixture("Application Form").page("http://localhost:3002");
 
 let baseObj = {
   personalInformation: {
     program: "smc",
-    firstname: "Kyle (test)",
-    lastname: "Jeferson",
+    firstname: "JAIME",
+    lastname: "TEST FORM",
     birthDate: "1999-11-29",
     sex: "male",
     age: "23",
