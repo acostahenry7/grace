@@ -229,11 +229,11 @@ module.exports = (app) => {
 
   router.post("/request/mail", async (req, res) => {
     var transporter = nodemailer.createTransport({
-      host: "graceinternational.com.do",
+      host: "smtp.gmail.com",
       port: 465,
       auth: {
-        user: "app@graceinternational.com.do",
-        pass: "@4Bb?C#(iU@$",
+        user: "Ops@graceinternational.com.do",
+        pass: "xkrtwjfolmihoimf",
       },
     });
     var mailOptions = {
@@ -269,7 +269,7 @@ module.exports = (app) => {
         res.send({ sent: true });
       }
     });
-    res.send({ message: "done" });
+    //res.send({ message: "done" });
   });
 
   router.get("/resources", (req, res) => {
