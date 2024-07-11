@@ -70,7 +70,7 @@ module.exports = (app) => {
         item: "Inglés HABLADO suficiente para interactuar con jóvenes en los EE.UU.",
       },
       {
-        item: `Cualquiera de las siguientes: Ser estudiante; profesor, haber trabajado con jóvenes o niños; tener alguna habilidad
+        item: `Cualquiera de las sigtes: Ser estudiante; profesor, haber trabajado con jóvenes o niños; tener alguna habilidad
       especial, por e.g. un deporte🏀; teatro🎭; arte🎨; baile💃🕺; Música🎸; actividades extremas🧗‍♂️ o cualquier
       habilidad útil en un campamento de verano.`,
       },
