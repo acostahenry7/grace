@@ -232,8 +232,8 @@ module.exports = (app) => {
       host: "smtp.gmail.com",
       port: 465,
       auth: {
-        user: "Ops@graceinternational.com.do",
-        pass: "xkrtwjfolmihoimf",
+        user: "ops@graceinternational.com.do",
+        pass: "lwazpktnmyxdbbki",
       },
     });
     var mailOptions = {
