@@ -50,10 +50,43 @@ a {
 .secondnav_steps a {
   margin-top: 0;
   text-decoration: none;
+  cursor: pointer;
 }
 
 #schedule:hover ~ .secondnav_steps {
   visibility: visible;
+  opacity: 1;
+  z-index: 101;
+}
+
+#interview_links {
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+  position: absolute;
+  z-index: 102;
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  right: -0.5px;
+  transition: 300ms;
+}
+
+#interview_links a {
+  padding: 1rem;
+}
+
+#interview_links a:hover {
+  background-color: #dadada;
+}
+
+#interview_schedule:hover ~ #interview_links {
+  display: flex;
+  opacity: 1;
+  opacity: 1;
+}
+
+#interview_links:hover {
+  display: flex;
   opacity: 1;
 }
 
